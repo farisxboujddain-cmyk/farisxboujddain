@@ -3,147 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Axiom Tech - حلول وخدمات</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <title>Axiom Tech | الصفحة الرئيسية</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Cairo', sans-serif;
+      font-family: Arial, sans-serif;
       background-color: #0d1117;
-      color: #ffffff;
+      color: #fff;
       text-align: center;
     }
     header {
-      background: #161b22;
-      padding: 40px 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    }
-    header h1 {
-      font-size: 2.5rem;
-      color: #3b82f6;
-      margin: 0;
-    }
-    header p {
-      font-size: 1.2rem;
-      color: #cbd5e1;
-    }
-    .section-title {
-      margin: 40px 0 20px;
-      font-size: 1.8rem;
-      color: #58a6ff;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      background-color: #161b22;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
       gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 20px;
     }
-    .card {
-      background: #161b22;
+    header a {
+      color: #58a6ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    header a:hover {
+      color: #1f6feb;
+    }
+    section {
+      max-width: 800px;
+      margin: 30px auto;
       padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease, background 0.3s ease;
+      background-color: #161b22;
+      border-radius: 10px;
     }
-    .card:hover {
-      transform: translateY(-5px);
-      background: #1e2530;
-    }
-    .card i {
-      font-size: 2rem;
-      color: #3b82f6;
-      margin-bottom: 10px;
-    }
-    .card h3 {
-      margin: 10px 0;
+    h1, h2 {
       color: #58a6ff;
     }
-    .price {
-      font-weight: bold;
-      color: #22c55e;
-      margin: 10px 0;
-    }
-    .btn {
+    .button {
       display: inline-block;
-      background: #3b82f6;
-      color: white;
       padding: 10px 20px;
+      background-color: #238636;
+      color: white;
       border-radius: 8px;
       text-decoration: none;
-      transition: 0.3s ease;
+      margin-top: 15px;
     }
-    .btn:hover {
-      background: #2563eb;
-    }
-    footer {
-      margin-top: 40px;
-      padding: 15px;
-      background: #161b22;
-      color: #94a3b8;
+    .button:hover {
+      background-color: #2ea043;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>🚀 Axiom Tech</h1>
-    <p>نحو حلول تقنية وتجارية متكاملة</p>
+    <a href="#">الرئيسية</a>
+    <a href="#">عن الشركة</a>
+    <a href="#">خدماتنا</a>
+    <a href="#">التقارير</a>
+    <a href="mailto:farisxboujddain@gmail.com">تواصل معنا</a>
   </header>
 
-  <h2 class="section-title">خدماتنا</h2>
-  <section class="grid">
-    <div class="card">
-      <i class="fas fa-laptop-code"></i>
-      <h3>تطوير المواقع</h3>
-      <p>تصميم مواقع احترافية حديثة وسريعة الاستجابة.</p>
-    </div>
-    <div class="card">
-      <i class="fas fa-mobile-alt"></i>
-      <h3>تطبيقات الهاتف</h3>
-      <p>تطوير تطبيقات أندرويد وiOS بجودة عالية.</p>
-    </div>
-    <div class="card">
-      <i class="fas fa-cloud"></i>
-      <h3>الحوسبة السحابية</h3>
-      <p>حلول Google Cloud وAWS لتطوير المشاريع.</p>
-    </div>
-    <div class="card">
-      <i class="fas fa-search-dollar"></i>
-      <h3>تحسين محركات البحث</h3>
-      <p>رفع ترتيب موقعك وزيادة عدد الزوار.</p>
-    </div>
+  <section>
+    <h1>🚀 Axiom Tech</h1>
+    <p>نحو حلول تقنية وتجارية متكاملة</p>
   </section>
 
-  <h2 class="section-title">منتجاتنا الرقمية</h2>
-  <section class="grid">
-    <div class="card">
-      <i class="fas fa-file-alt"></i>
-      <h3>تقرير شهري</h3>
-      <p class="price">$15</p>
-      <a class="btn" href="#">شراء الآن</a>
-    </div>
-    <div class="card">
-      <i class="fas fa-chart-line"></i>
-      <h3>تحليل السوق</h3>
-      <p class="price">$30</p>
-      <a class="btn" href="#">شراء الآن</a>
-    </div>
-    <div class="card">
-      <i class="fas fa-book"></i>
-      <h3>دليل استراتيجي</h3>
-      <p class="price">$50</p>
-      <a class="btn" href="#">شراء الآن</a>
-    </div>
+  <section>
+    <h2>خدماتنا</h2>
+    <p>تطوير المواقع | تطبيقات الهاتف | استشارات الأعمال</p>
+    <a class="button" href="mailto:farisxboujddain@gmail.com">📧 راسلنا الآن</a>
   </section>
 
-  <a href="mailto:yourmail@example.com" class="btn" style="margin-top:30px;">📩 تواصل معنا</a>
-
-  <footer>
-    &copy; 2025 جميع الحقوق محفوظة | Axiom Tech
-  </footer>
+  <section>
+    <h2>عن الشركة</h2>
+    <p>نحن شركة متخصصة في تطوير الحلول التقنية واستراتيجيات التجارة الإلكترونية، من التصميم إلى التنفيذ الكامل.</p>
+  </section>
 </body>
 </html>

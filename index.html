@@ -3,115 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AxiomTech - Integrated Tech Solutions</title>
+  <title>Thank You - AxiomTech</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
-  <meta name="description" content="AxiomTech provides web development, mobile apps, and business solutions to help your business grow.">
   <style>
-    body { font-family: 'Inter', sans-serif; background-color: #1a1a2e; color: #e0e0e0; }
-    html { scroll-behavior: smooth; }
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 50%;
-      height: 4px;
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #1a1a2e;
+      color: #e0e0e0;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
       background-color: #ff5733;
-      border-radius: 2px;
+      color: white;
+      font-weight: bold;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .btn:hover {
+      background-color: #ff7f50;
+      transform: scale(1.05);
     }
   </style>
 </head>
-<body class="overflow-x-hidden">
+<body>
+  <h1 class="text-4xl font-extrabold text-[#ff5733] mb-4">🎉 شكراً على تواصلك معنا!</h1>
+  <p class="text-lg text-gray-300 max-w-md">لقد استلمنا رسالتك وسنراجعها في أقرب وقت ممكن.  
+    فريقنا سيتواصل معك قريباً عبر البريد الإلكتروني. 🚀</p>
 
-  <!-- Header -->
-  <header class="bg-[#24244a] text-white py-4 px-6 shadow-lg rounded-b-3xl fixed w-full z-50">
-    <nav class="container mx-auto flex justify-between items-center flex-wrap gap-4">
-      <a href="#hero" class="text-3xl font-bold text-[#ff5733] hover:text-[#ff7f50]">AxiomTech</a>
-      <ul class="flex space-x-4 md:space-x-8 items-center flex-wrap justify-end gap-2">
-        <li><a href="#services" class="hover:text-[#ff5733] font-semibold text-lg">Services</a></li>
-        <li><a href="#portfolio" class="hover:text-[#ff5733] font-semibold text-lg">Portfolio</a></li>
-        <li><a href="#about" class="hover:text-[#ff5733] font-semibold text-lg">About Us</a></li>
-        <li><a href="#join-us" class="hover:text-[#ff5733] font-semibold text-lg">Join Our Team</a></li>
-        <li><a href="#contact" class="bg-[#ff5733] hover:bg-[#ff7f50] px-6 py-2 rounded-full">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="py-24 px-4">
-
-    <!-- Hero -->
-    <section id="hero" class="container text-center mb-24 pt-16">
-      <h1 class="text-5xl md:text-7xl font-extrabold text-[#ff5733] mb-4 drop-shadow-lg">AxiomTech</h1>
-      <p class="text-xl md:text-2xl text-gray-300 mb-8">We provide advanced technological solutions to boost your business growth.</p>
-      <a href="#services" class="inline-block px-10 py-5 bg-[#ff5733] text-white font-bold rounded-full shadow-lg hover:bg-[#ff7f50] hover:scale-105 transition">Explore Our Services</a>
-    </section>
-
-    <!-- Services -->
-    <section id="services" class="container mb-24">
-      <h2 class="text-4xl font-bold text-center text-white mb-12 relative section-title">Our Services</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-[#24244a] p-8 rounded-3xl shadow-xl hover:scale-105 transition"><h3 class="text-2xl text-center mb-2">💻 Web Development</h3><p class="text-gray-400 text-center">Responsive websites & web apps with modern tech.</p></div>
-        <div class="bg-[#24244a] p-8 rounded-3xl shadow-xl hover:scale-105 transition"><h3 class="text-2xl text-center mb-2">📱 Mobile Apps</h3><p class="text-gray-400 text-center">Native and hybrid apps for iOS & Android.</p></div>
-        <div class="bg-[#24244a] p-8 rounded-3xl shadow-xl hover:scale-105 transition"><h3 class="text-2xl text-center mb-2">📊 Business Solutions</h3><p class="text-gray-400 text-center">Custom solutions for business growth.</p></div>
-      </div>
-    </section>
-
-    <!-- Join Our Team -->
-    <section id="join-us" class="container text-center mb-24">
-      <h2 class="text-4xl font-bold text-[#ff5733] mb-4 relative section-title">Join the AxiomTech Team</h2>
-      <form class="contact-form space-y-6 bg-[#24244a] p-10 rounded-3xl shadow-xl max-w-2xl mx-auto" data-form>
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="#">
-        <input type="text" name="Full Name" placeholder="Your Name" required class="w-full p-3 rounded-xl bg-[#1a1a2e] border border-[#ff5733] text-white">
-        <input type="email" name="Email" placeholder="Your Email" required class="w-full p-3 rounded-xl bg-[#1a1a2e] border border-[#ff5733] text-white">
-        <textarea name="Message" placeholder="Tell us about your skills..." required class="w-full p-3 rounded-xl bg-[#1a1a2e] border border-[#ff5733] text-white"></textarea>
-        <button type="submit" class="px-10 py-4 bg-[#ff5733] text-white font-bold rounded-full hover:bg-[#ff7f50] hover:scale-105 transition">Submit</button>
-      </form>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="container">
-      <h2 class="text-4xl font-bold text-center text-white mb-12 relative section-title">Contact Us</h2>
-      <form class="contact-form space-y-6 bg-[#24244a] p-10 rounded-3xl shadow-xl max-w-2xl mx-auto" data-form>
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="#">
-        <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded-xl bg-[#1a1a2e] border border-[#ff5733] text-white">
-        <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded-xl bg-[#1a1a2e] border border-[#ff5733] text-white">
-        <textarea name="message" placeholder="Your Message" required class="w-full p-3 rounded-xl bg-[#1a1a2e] border border-[#ff5733] text-white"></textarea>
-        <button type="submit" class="px-10 py-4 bg-[#ff5733] text-white font-bold rounded-full hover:bg-[#ff7f50] hover:scale-105 transition">Send</button>
-      </form>
-    </section>
-
-  </main>
-
-  <!-- Popup Message -->
-  <div id="popup" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-    <div class="bg-[#24244a] p-8 rounded-3xl shadow-xl text-center max-w-sm">
-      <h3 class="text-2xl font-bold text-white mb-2">✅ Message Sent</h3>
-      <p class="text-gray-300">Thank you! Your message has been delivered successfully.</p>
-      <button onclick="document.getElementById('popup').classList.add('hidden')" class="mt-4 px-6 py-2 bg-[#ff5733] text-white rounded-full hover:bg-[#ff7f50]">Close</button>
-    </div>
-  </div>
-
-  <footer class="bg-[#24244a] text-center text-gray-500 py-6 px-4 mt-16 rounded-t-3xl">
-    <p>&copy; 2025 AxiomTech. All rights reserved.</p>
-  </footer>
-
-  <script>
-    document.querySelectorAll("[data-form]").forEach(form => {
-      form.addEventListener("submit", function(event) {
-        event.preventDefault();
-        fetch("https://formsubmit.co/ajax/farisxboujddain@gmail.com", {
-          method: "POST",
-          body: new FormData(form)
-        }).then(() => {
-          form.reset();
-          document.getElementById("popup").classList.remove("hidden");
-        }).catch(() => alert("Error sending message."));
-      });
-    });
-  </script>
-
+  <a href="index.html" class="btn">🔙 الرجوع إلى الصفحة الرئيسية</a>
 </body>
 </html>

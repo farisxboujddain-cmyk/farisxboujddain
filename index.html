@@ -1,50 +1,150 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AXIOMTECH - Innovative Technology Solutions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>AXIOMTECH | حلول التجارة الإلكترونية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary-color: #0a2463;
+            --secondary-color: #fb8500;
+            --accent-color: #4361ee;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --success-color: #28a745;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0d1222;
-            color: #e2e8f0;
+            background-color: #fff;
+            color: var(--dark-color);
             line-height: 1.6;
         }
-        .header-bg {
-            background: linear-gradient(rgba(13, 18, 34, 0.9), rgba(13, 18, 34, 0.9)), url('https://placehold.co/1920x1080/0d1222/e2e8f0?text=AXIOMTECH');
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            color: white;
+            font-size: 1.8rem;
+            margin-right: 10px;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 36, 99, 0.8), rgba(10, 36, 99, 0.9)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1415&q=80');
             background-size: cover;
             background-position: center;
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
         }
-        .nav-link {
-            transition: color 0.3s, transform 0.3s;
-            position: relative;
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
-        .nav-link:hover {
-            color: #4c51bf;
-            transform: translateY(-2px);
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
         }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #4c51bf;
-            transition: width 0.3s ease-in-out;
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
         }
-        .nav-link:hover::after {
-            width: 100%;
+        
+        .btn:hover {
+            background-color: #e67700;
+            transform: translateY(-3px);
         }
+        
+        /* Sections */
         .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
             position: relative;
-            padding-bottom: 0.5rem;
-            color: #fff;
+            padding-bottom: 15px;
         }
-        .section-title::after {
+        
+        .section-title:after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -52,249 +152,424 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background-color: #4c51bf;
-            border-radius: 2px;
+            background-color: var(--secondary-color);
         }
-        .card {
-            background: #1a202c;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-radius: 1rem;
-            border: 1px solid rgba(76, 81, 191, 0.2);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        
+        section {
+            padding: 5rem 0;
         }
-        .card:hover {
+        
+        .section-light {
+            background-color: var(--light-color);
+        }
+        
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
         }
-        .btn {
-            background-color: #4c51bf;
-            transition: background-color 0.3s, transform 0.3s;
+        
+        .service-content {
+            padding: 1.5rem;
         }
-        .btn:hover {
-            background-color: #5a67d8;
-            transform: scale(1.02);
+        
+        .service-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
         }
-        .btn-secondary {
-            background-color: #2d3748;
-            transition: background-color 0.3s;
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
         }
-        .btn-secondary:hover {
-            background-color: #4a5568;
+        
+        /* Forms */
+        .form-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
         }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-control {
             width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(5px);
-            animation: fadeIn 0.3s;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
         }
-        .modal-content {
-            background-color: #2d3748;
-            margin: 15% auto;
-            padding: 40px;
-            border: 1px solid #4c51bf;
-            width: 80%;
-            max-width: 500px;
-            border-radius: 1rem;
+        
+        .form-control:focus {
+            border-color: var(--accent-color);
+            outline: none;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Success Message */
+        .success-message {
+            display: none;
+            background-color: var(--success-color);
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
             text-align: center;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
             position: relative;
-            animation: slideIn 0.5s;
+            padding-bottom: 10px;
         }
-        .close-btn {
-            color: #aaa;
+        
+        .footer-section h3:after {
+            content: '';
             position: absolute;
-            top: 10px;
-            right: 25px;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-color);
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        
+        .footer-contact p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
         }
-        @keyframes slideIn {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        
+        .footer-contact i {
+            margin-left: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 1rem;
+                left: 1rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
         }
     </style>
-    <!-- Phosphor Icons for professional icons -->
-    <script src="https://unpkg.com/@phosphor-icons/web@2.0.3/dist/phosphor.js"></script>
 </head>
 <body>
-
-    <!-- Header & Navigation -->
-    <header id="home" class="header-bg py-8 md:py-16 text-center text-white">
-        <nav class="container mx-auto px-4 flex justify-between items-center mb-10">
-            <a href="#" class="text-3xl md:text-4xl font-bold tracking-wide text-[#4c51bf]">AXIOMTECH</a>
-            <ul class="flex space-x-4 md:space-x-8">
-                <li><a href="#home" class="nav-link font-medium text-lg">Home</a></li>
-                <li><a href="#services" class="nav-link font-medium text-lg">Services</a></li>
-                <li><a href="#join" class="nav-link font-medium text-lg">Join Us</a></li>
-            </ul>
-        </nav>
-        <div class="container mx-auto px-4 mt-16 md:mt-32">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 animate-fadeIn">We Build the Digital Future</h1>
-            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 animate-fadeIn animate-delay-300">Innovative technology solutions for startups and large enterprises</p>
-            <a href="#services" class="btn text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl animate-bounce">Explore Our Services</a>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="logo">
+                <h1>AXIO<span>MTECH</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#about">عن الشركة</a></li>
+                    <li><a href="#services">الخدمات</a></li>
+                    <li><a href="#strategies">الاستراتيجيات</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>حلول التجارة الإلكترونية الاحترافية</h2>
+            <p>نقدم استراتيجيات وتوصيات متقدمة لتعزيز وجودك الرقمي وزيادة مبيعاتك عبر الإنترنت</p>
+            <a href="#services" class="btn">اكتشف خدماتنا</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">عن AXIOMTECH</h2>
+            <div class="form-container">
+                <p>AXIOMTECH هي شركة رائدة في مجال حلول التجارة الإلكترونية، نقدم خدمات استشارية متكاملة وإنشاء متاجر إلكترونية احترافية. نحن نعمل على تحليل السوق وتطوير استراتيجيات مخصصة لتحقيق أهداف أعمالك.</p>
+                <p>فريقنا من الخبراء يضم مختصين في التسويق الرقمي، تطوير الويب، تحليل البيانات وتصميم تجربة المستخدم. نضمن لعملائنا الحلول الأمثل التي تتناسب مع احتياجاتهم وتساعدهم على النمو في السوق الرقمي التنافسي.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Services Section -->
-    <section id="services" class="py-16 md:py-24 bg-[#0a0f1d]">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title mx-auto w-fit">Our Business Services</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Service Card 1: Reports -->
-                <div class="card p-6 rounded-lg">
-                    <div class="text-6xl mb-4 text-[#63b3ed]">
-                         <i class="ph-file-magnifying-glass-duotone"></i>
+    <section id="services" class="section-light">
+        <div class="container">
+            <h2 class="section-title">خدماتنا</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>استراتيجيات التجارة الإلكترونية</h3>
+                        <p>نطور استراتيجيات مخصصة لتعزيز وجودك في السوق الرقمي وزيادة مبيعاتك عبر الإنترنت.</p>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Reports Analysis</h3>
-                    <p class="text-gray-400">We provide accurate and comprehensive analysis of your company's data, allowing you to make well-informed, fact-based decisions.</p>
                 </div>
-                <!-- Service Card 2: Branding -->
-                <div class="card p-6 rounded-lg">
-                    <div class="text-6xl mb-4 text-[#63b3ed]">
-                        <i class="ph-palette-duotone"></i>
+                <div class="service-card">
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h3>إنشاء المتاجر الإلكترونية</h3>
+                        <p>نصمم ونطور متاجر إلكترونية احترافية وسهلة الاستخدام تتوافق مع أحدث المعايير التقنية.</p>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Logo & Brand Identity Design</h3>
-                    <p class="text-gray-400">We transform your idea into a unique visual identity that reflects your company's values and stands out in the market.</p>
                 </div>
-                <!-- Service Card 3: Marketing -->
-                <div class="card p-6 rounded-lg">
-                    <div class="text-6xl mb-4 text-[#63b3ed]">
-                        <i class="ph-chart-line-duotone"></i>
+                <div class="service-card">
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>تقارير وتحليلات</h3>
+                        <p>نقدم تقارير مفصلة وتحليلات数据 تساعدك على فهم أداء متجرك واتخاذ القرارات الصحيحة.</p>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Marketing Strategies</h3>
-                    <p class="text-gray-400">We plan and execute innovative digital marketing campaigns to increase your reach to the target audience and achieve record sales.</p>
-                </div>
-                <!-- Service Card 4: Business Solutions -->
-                <div class="card p-6 rounded-lg">
-                    <div class="text-6xl mb-4 text-[#63b3ed]">
-                        <i class="ph-lightbulb-duotone"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Integrated Business Solutions</h3>
-                    <p class="text-gray-400">We offer comprehensive solutions to develop your business, from initial planning to implementation and ongoing support.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Contact Form for Business Services -->
-            <div class="mt-16 bg-[#1a202c] p-8 rounded-lg max-w-2xl mx-auto text-left border border-gray-700">
-                <h3 class="text-2xl font-bold mb-4 text-center">Request Our Services</h3>
-                <form id="serviceForm" onsubmit="handleFormSubmit(event, 'service')">
-                    <div>
-                        <label for="service_name" class="block text-sm font-medium mb-1">Full Name</label>
-                        <input type="text" id="service_name" name="Name" required
-                               class="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+    <!-- Strategies Section -->
+    <section id="strategies">
+        <div class="container">
+            <h2 class="section-title">استراتيجياتنا</h2>
+            <div class="form-container">
+                <h3>نهجنا في تطوير حلول التجارة الإلكترونية</h3>
+                <p>نتبع في AXIOMTECH منهجية شاملة تعتمد على:</p>
+                <ul>
+                    <li>تحليل السوق والمنافسين لفهم البيئة التنافسية</li>
+                    <li>تحديد الجمهور المستهدف ودراسة سلوكه الشرائي</li>
+                    <li>تطوير خطة تسويقية متكاملة تركز على قنوات التسويق الفعالة</li>
+                    <li>تصميم تجربة مستخدم متميزة تزيد من معدلات التحويل</li>
+                    <li>تطوير استراتيجية محتوى جذابة وتحسين محركات البحث</li>
+                    <li>تحليل البيانات وتقديم توصيات مستمرة للتحسين</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Request Section -->
+    <section id="request-service" class="section-light">
+        <div class="container">
+            <h2 class="section-title">طلب خدمة</h2>
+            <div class="form-container">
+                <div class="success-message" id="service-success">
+                    شكراً لك! تم استلام طلبك بنجاح وسنتواصل معك قريباً.
+                </div>
+                <form id="service-form">
+                    <div class="form-group">
+                        <label for="name">الاسم الكامل</label>
+                        <input type="text" id="name" class="form-control" required>
                     </div>
-                    <div>
-                        <label for="service_email" class="block text-sm font-medium mb-1">Email Address</label>
-                        <input type="email" id="service_email" name="Email" required
-                               class="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" id="email" class="form-control" required>
                     </div>
-                    <div>
-                        <label for="service_type" class="block text-sm font-medium mb-1">Requested Service Type</label>
-                        <select id="service_type" name="Service Type" required
-                                class="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                            <option value="">-- Select a Service --</option>
-                            <option value="Reports Analysis">Reports Analysis</option>
-                            <option value="Branding Design">Logo & Brand Identity Design</option>
-                            <option value="Marketing Strategies">Marketing Strategies</option>
-                            <option value="Business Solutions">Integrated Business Solutions</option>
-                            <option value="Other">Other</option>
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف</label>
+                        <input type="tel" id="phone" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service-type">نوع الخدمة المطلوبة</label>
+                        <select id="service-type" class="form-control" required>
+                            <option value="">اختر الخدمة</option>
+                            <option value="استشارة">استشارة في التجارة الإلكترونية</option>
+                            <option value="استراتيجية">تطوير استراتيجية متكاملة</option>
+                            <option value="تصميم">تصميم متجر إلكتروني</option>
+                            <option value="تقرير">تقرير وتحليلات</option>
+                            <option value="أخرى">خدمة أخرى</option>
                         </select>
                     </div>
-                    <div>
-                        <label for="service_details" class="block text-sm font-medium mb-1">Request Details</label>
-                        <textarea id="service_details" name="Request Details" rows="5" placeholder="Please provide details of your request here..." required
-                                  class="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    <div class="form-group">
+                        <label for="message">الوصف المفصل للطلب</label>
+                        <textarea id="message" class="form-control" required></textarea>
                     </div>
-                    <button type="submit" class="btn text-white font-bold py-2 px-6 rounded-md w-full">Submit Request</button>
+                    <button type="submit" class="btn">إرسال الطلب</button>
                 </form>
             </div>
         </div>
     </section>
 
     <!-- Join Us Section -->
-    <section id="join" class="py-16 md:py-24 bg-[#0d1222]">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title mx-auto w-fit">Join the AXIOMTECH Family</h2>
-            <p class="max-w-3xl mx-auto text-gray-400 mb-8">
-                We are always looking for creative talents to join our team. If you are passionate about technology and have strong skills in areas like **programming, graphic design, or digital marketing**, do not hesitate to apply.
-            </p>
-            <a href="https://github.com/your_github_org_link" class="btn-secondary text-white font-bold py-3 px-8 rounded-full shadow-lg mb-8" target="_blank">
-                <i class="ph-github-logo-duotone text-xl inline-block mr-2"></i>
-                Visit Our Github Page
-            </a>
-
-            <!-- Job Application Form -->
-            <div class="mt-16 bg-[#1a202c] p-8 rounded-lg max-w-2xl mx-auto text-left border border-gray-700">
-                <h3 class="text-2xl font-bold mb-4 text-center">Apply Now</h3>
-                <form id="jobForm" onsubmit="handleFormSubmit(event, 'job')">
-                    <div>
-                        <label for="job_name" class="block text-sm font-medium mb-1">Full Name</label>
-                        <input type="text" id="job_name" name="Name" required
-                               class="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+    <section id="join-us">
+        <div class="container">
+            <h2 class="section-title">انضم إلى فريقنا</h2>
+            <div class="form-container">
+                <div class="success-message" id="join-success">
+                    شكراً لك! تم استلام طلب الانضمام بنجاح وسنتواصل معك قريباً.
+                </div>
+                <form id="join-form">
+                    <div class="form-group">
+                        <label for="join-name">الاسم الكامل</label>
+                        <input type="text" id="join-name" class="form-control" required>
                     </div>
-                    <div>
-                        <label for="job_email" class="block text-sm font-medium mb-1">Email Address</label>
-                        <input type="email" id="job_email" name="Email" required
-                               class="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <div class="form-group">
+                        <label for="join-email">البريد الإلكتروني</label>
+                        <input type="email" id="join-email" class="form-control" required>
                     </div>
-                    <div>
-                        <label for="job_skills" class="block text-sm font-medium mb-1">Your Skills</label>
-                        <textarea id="job_skills" name="Skills" rows="5" placeholder="List your key skills (e.g., Web Development, Graphic Design, Digital Marketing)" required
-                                  class="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    <div class="form-group">
+                        <label for="join-phone">رقم الهاتف</label>
+                        <input type="tel" id="join-phone" class="form-control" required>
                     </div>
-                    <button type="submit" class="btn text-white font-bold py-2 px-6 rounded-md w-full">Submit Application</button>
+                    <div class="form-group">
+                        <label for="skills">المهارات والخبرات</label>
+                        <textarea id="skills" class="form-control" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="position">المجال الذي ترغب بالعمل فيه</label>
+                        <select id="position" class="form-control" required>
+                            <option value="">اختر المجال</option>
+                            <option value="تطوير">تطوير الويب</option>
+                            <option value="تصميم">تصميم UI/UX</option>
+                            <option value="تسويق">التسويق الرقمي</option>
+                            <option value="تحليل">تحليل البيانات</option>
+                            <option value="أخرى">مجال آخر</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn">إرسال طلب الانضمام</button>
                 </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 py-6 text-center text-gray-400">
-        <p>&copy; 2024 AXIOMTECH. All Rights Reserved.</p>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AXIO<span>MTECH</span></h3>
+                    <p>شركة رائدة في تقديم حلول التجارة الإلكترونية والاستراتيجيات الرقمية.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#about">عن الشركة</a></li>
+                        <li><a href="#services">الخدمات</a></li>
+                        <li><a href="#strategies">الاستراتيجيات</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section footer-contact">
+                    <h3>اتصل بنا</h3>
+                    <p><i class="fas fa-envelope"></i> boujeddaienfarid@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +123456789</p>
+                    <p><i class="fas fa-map-marker-alt"></i> الجزائر</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 AXIOMTECH. جميع الحقوق محفوظة</p>
+            </div>
+        </div>
     </footer>
 
     <script>
-        function handleFormSubmit(event, formType) {
-            event.preventDefault();
-            const form = event.target;
-            const formData = new FormData(form);
+        // إدارة إرسال النماذج
+        document.addEventListener('DOMContentLoaded', function() {
+            // نموذج طلب الخدمة
+            const serviceForm = document.getElementById('service-form');
+            const serviceSuccess = document.getElementById('service-success');
             
-            let subject, body;
-            
-            if (formType === 'service') {
-                const name = formData.get('Name');
-                const email = formData.get('Email');
-                const serviceType = formData.get('Service Type');
-                const details = formData.get('Request Details');
+            serviceForm.addEventListener('submit', function(e) {
+                e.preventDefault();
                 
-                subject = `New Service Request from ${name}`;
-                body = `Name: ${name}\nEmail: ${email}\nService Type: ${serviceType}\n\nDetails:\n${details}`;
-            } else if (formType === 'job') {
-                const name = formData.get('Name');
-                const email = formData.get('Email');
-                const skills = formData.get('Skills');
-
-                subject = `New Job Application from ${name}`;
-                body = `Name: ${name}\nEmail: ${email}\n\nSkills:\n${skills}`;
-            }
-
-            const mailtoLink = `mailto:farisxboujddain@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            
-            window.location.href = mailtoLink;
-        }
-    </script>
-</body>
-</html>
-
-                            
+                // جمع بيانات النموذج
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    service: document.getElementById('service-type').value,
+                    message: document.getElementById('message').value,
+                    type: 'طلب خدمة'
+                };
+                
+                // إرسال البيانات عبر EmailJS
+                emailjs.send('service_your_service_id', 'template_your_template_id', formData)
+                    .then(function(response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        serviceSuccess.style.display = 'block';
+                        serviceForm.reset();
+                        
+                        // إخفاء الرسالة بعد 5 ثوان
+                        setTimeout(() => {
+                            serviceSuccess.style.display = 'none';
+                        }, 5000);
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                        alert('عذراً، حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى.');

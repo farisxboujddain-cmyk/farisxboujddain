@@ -1,173 +1,153 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AxiomTech | حلول رقمية متكاملة</title>
+  <title>AxiomTech - Business Solutions & Careers</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #0d1117, #161b22);
+      background: linear-gradient(135deg, #1a1a2e, #24244a, #3a3a5a);
       color: #e0e0e0;
-      scroll-behavior: smooth;
-      background-image: radial-gradient(circle at 10% 20%, rgba(0, 180, 255, 0.15) 0%, transparent 40%),
-                        radial-gradient(circle at 80% 80%, rgba(0, 180, 255, 0.1) 0%, transparent 40%);
-      background-attachment: fixed;
     }
-    .logo-glow {
-      font-size: 2rem;
-      font-weight: 900;
-      color: #00b4ff;
-      text-shadow: 0 0 15px #00b4ff, 0 0 30px #00b4ff;
-      letter-spacing: 2px;
-      animation: glow 2s infinite alternate;
-    }
-    @keyframes glow {
-      from { text-shadow: 0 0 8px #00b4ff, 0 0 16px #00b4ff; }
-      to { text-shadow: 0 0 20px #00e1ff, 0 0 40px #00e1ff; }
-    }
+    html { scroll-behavior: smooth; }
     .section-title::after {
-      content: "";
-      display: block;
-      margin: 0.5rem auto;
-      width: 50px;
-      height: 3px;
-      background-color: #00b4ff;
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background-color: #ff5733;
       border-radius: 2px;
     }
+    #popup { display: none; }
   </style>
 </head>
 <body class="overflow-x-hidden">
 
   <!-- Header -->
-  <header class="bg-[#161b22]/90 backdrop-blur-md shadow-lg fixed w-full z-50">
-    <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <div class="logo-glow">AXIOMTECH</div>
-      <div class="space-x-4">
-        <a href="#services" class="hover:text-[#00b4ff] transition">خدمات</a>
-        <a href="#portfolio" class="hover:text-[#00b4ff] transition">أعمالنا</a>
-        <a href="#strategies" class="hover:text-[#00b4ff] transition">استراتيجيات</a>
-        <a href="#careers" class="hover:text-[#00b4ff] transition">انضم إلينا</a>
-        <a href="#contact" class="bg-[#00b4ff] text-white px-4 py-2 rounded-full hover:bg-[#0093cc] transition">اتصال</a>
-      </div>
+  <header class="bg-[#24244a]/90 backdrop-blur-md text-white py-4 px-6 shadow-lg rounded-b-3xl fixed w-full z-50">
+    <nav class="container mx-auto flex justify-between items-center">
+      <a href="#hero" class="text-3xl font-bold text-[#ff5733] hover:text-[#ff7f50]">AxiomTech</a>
+      <ul class="flex space-x-6">
+        <li><a href="#services" class="hover:text-[#ff5733]">Services</a></li>
+        <li><a href="#strategies" class="hover:text-[#ff5733]">Strategies</a></li>
+        <li><a href="#join-us" class="hover:text-[#ff5733]">Careers</a></li>
+        <li><a href="#contact" class="bg-[#ff5733] hover:bg-[#ff7f50] px-4 py-2 rounded-full">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
   <main class="pt-28 px-4">
+
     <!-- Hero Section -->
-    <section class="text-center mb-16">
-      <h1 class="text-5xl md:text-6xl font-extrabold text-[#00b4ff] mb-4 drop-shadow-lg">AxiomTech</h1>
-      <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
-        منصة مطورين تقدم حلول رقمية وتجارية متكاملة لنجاح مشاريعك عبر الإنترنت.
-      </p>
-      <a href="#strategies" class="inline-block mt-6 px-6 py-3 bg-[#00b4ff] text-black font-bold rounded-full hover:bg-[#0093cc] transition">
-        اكتشف استراتيجياتنا
-      </a>
+    <section id="hero" class="text-center mb-20">
+      <h1 class="text-5xl md:text-7xl font-extrabold text-[#ff5733] drop-shadow-lg mb-4">Empowering Your Business</h1>
+      <p class="text-xl text-gray-300 mb-6 max-w-2xl mx-auto">Custom reports, brand templates, and business strategies crafted to grow your vision. Your success is our mission.</p>
+      <a href="#contact" class="px-8 py-4 bg-[#ff5733] rounded-full text-white hover:bg-[#ff7f50] hover:scale-105 transition-transform">Let's Work Together</a>
     </section>
 
     <!-- Services -->
-    <section id="services" class="mb-16">
-      <h2 class="text-3xl font-bold text-center section-title mb-8">خدماتنا</h2>
-      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        <div class="bg-[#1e1e2f] p-6 rounded-3xl shadow hover:scale-105 transition">
-          <h3 class="text-xl font-bold mb-2 text-[#00b4ff] text-center">تصميم المواقع</h3>
-          <p class="text-gray-400 text-center">مواقع احترافية متجاوبة وسريعة بأحدث التقنيات.</p>
+    <section id="services" class="mb-20">
+      <h2 class="text-4xl font-bold text-center mb-12 relative section-title">Our Core Services</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-[#24244a] p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform">
+          <div class="text-5xl mb-3 text-center">🎨</div>
+          <h3 class="text-xl font-bold text-center">Brand & Template Design</h3>
+          <p class="text-gray-400 text-center">Professional branding kits and templates tailored to your identity.</p>
         </div>
-        <div class="bg-[#1e1e2f] p-6 rounded-3xl shadow hover:scale-105 transition">
-          <h3 class="text-xl font-bold mb-2 text-[#00b4ff] text-center">الهويات التجارية</h3>
-          <p class="text-gray-400 text-center">تصميم شعار وهوية بصرية تزيد من قوة علامتك التجارية.</p>
+        <div class="bg-[#24244a] p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform">
+          <div class="text-5xl mb-3 text-center">📊</div>
+          <h3 class="text-xl font-bold text-center">Custom Reports</h3>
+          <p class="text-gray-400 text-center">Clear, detailed reports and analytics for smarter decisions.</p>
         </div>
-        <div class="bg-[#1e1e2f] p-6 rounded-3xl shadow hover:scale-105 transition">
-          <h3 class="text-xl font-bold mb-2 text-[#00b4ff] text-center">استراتيجيات الأعمال</h3>
-          <p class="text-gray-400 text-center">خطط عملية لجذب العملاء وزيادة المبيعات.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Portfolio -->
-    <section id="portfolio" class="mb-16">
-      <h2 class="text-3xl font-bold text-center section-title mb-8">أعمالنا</h2>
-      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        <div class="bg-[#1e1e2f] p-6 rounded-3xl shadow hover:scale-105 transition">
-          <img src="https://placehold.co/600x400/3A3A3A/E0E0E0?text=مشروع+1" class="w-full h-48 object-cover rounded-xl mb-3">
-          <h3 class="text-xl font-bold text-[#00b4ff] text-center">إدارة المهام</h3>
-          <p class="text-gray-400 text-center">تطبيق ويب يساعد الفرق على تنظيم مشاريعهم بكفاءة.</p>
-        </div>
-        <div class="bg-[#1e1e2f] p-6 rounded-3xl shadow hover:scale-105 transition">
-          <img src="https://placehold.co/600x400/3A3A3A/E0E0E0?text=مشروع+2" class="w-full h-48 object-cover rounded-xl mb-3">
-          <h3 class="text-xl font-bold text-[#00b4ff] text-center">منصة تجارة إلكترونية</h3>
-          <p class="text-gray-400 text-center">متجر رقمي متكامل لبيع المنتجات والخدمات عبر الإنترنت.</p>
-        </div>
-        <div class="bg-[#1e1e2f] p-6 rounded-3xl shadow hover:scale-105 transition">
-          <img src="https://placehold.co/600x400/3A3A3A/E0E0E0?text=مشروع+3" class="w-full h-48 object-cover rounded-xl mb-3">
-          <h3 class="text-xl font-bold text-[#00b4ff] text-center">نظام إدارة المحتوى</h3>
-          <p class="text-gray-400 text-center">حل مخصص لإدارة محتوى المواقع والمدونات بسهولة.</p>
+        <div class="bg-[#24244a] p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform">
+          <div class="text-5xl mb-3 text-center">🎯</div>
+          <h3 class="text-xl font-bold text-center">Business Strategy</h3>
+          <p class="text-gray-400 text-center">Actionable strategies to grow and scale your business.</p>
         </div>
       </div>
     </section>
 
     <!-- Strategies -->
-    <section id="strategies" class="mb-16 text-center">
-      <h2 class="text-3xl font-bold section-title mb-8">استراتيجياتنا</h2>
-      <p class="max-w-3xl mx-auto text-gray-300 mb-6">
-        نساعد عملاءنا على بناء حضور رقمي قوي من خلال استراتيجيات تسويق ذكية،
-        تحسين تجربة المستخدم، وتطوير حلول مخصصة تناسب أهداف أعمالهم.
-      </p>
+    <section id="strategies" class="mb-20 text-center">
+      <h2 class="text-4xl font-bold text-center mb-12 relative section-title">Insights & Strategies</h2>
+      <p class="max-w-2xl mx-auto text-gray-300 mb-6 text-lg">We analyze your goals and provide a step-by-step roadmap to success. From branding to analytics, our solutions are built to make your business thrive.</p>
+      <p class="max-w-2xl mx-auto text-gray-400 italic">"Strong businesses are built with strong foundations — let us build yours."</p>
+    </section>
 
-      <!-- Service Request Form -->
-      <form action="https://formsubmit.co/farisxboujddain@gmail.com" method="POST"
-        class="max-w-xl mx-auto bg-[#1e1e2f] p-6 rounded-3xl space-y-4">
-        <input type="text" name="name" placeholder="اسمك الكامل" required
-          class="w-full p-3 rounded-xl bg-[#0d1117] border border-[#00b4ff] text-white">
-        <input type="email" name="email" placeholder="بريدك الإلكتروني" required
-          class="w-full p-3 rounded-xl bg-[#0d1117] border border-[#00b4ff] text-white">
-        <select name="service" required class="w-full p-3 rounded-xl bg-[#0d1117] border border-[#00b4ff] text-white">
-          <option value="">اختر الخدمة المطلوبة</option>
-          <option value="تصميم موقع">تصميم موقع</option>
-          <option value="تصميم شعار وهوية">تصميم شعار وهوية</option>
-          <option value="استشارات">استشارات واستراتيجيات</option>
-        </select>
-        <textarea name="message" rows="4" placeholder="اشرح لنا بالتفصيل ما الذي تحتاجه"
-          class="w-full p-3 rounded-xl bg-[#0d1117] border border-[#00b4ff] text-white"></textarea>
-        <button type="submit"
-          class="bg-[#00b4ff] hover:bg-[#0093cc] w-full p-3 rounded-full text-white font-bold">إرسال الطلب</button>
+    <!-- Careers Section -->
+    <section id="join-us" class="mb-20 text-center">
+      <h2 class="text-4xl font-bold text-center mb-12 relative section-title">Join Our Team</h2>
+      <p class="text-gray-300 mb-8">We are looking for passionate developers, designers, and creative minds to join AxiomTech. Submit your details and we'll reach out to you.</p>
+      <form class="contact-form bg-[#24244a] p-8 rounded-2xl shadow-xl max-w-xl mx-auto space-y-4">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="Full Name" placeholder="Full Name" required class="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-[#ff5733]">
+        <input type="email" name="Email" placeholder="Email Address" required class="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-[#ff5733]">
+        <input type="text" name="Speciality" placeholder="Your Speciality (e.g. Frontend Developer)" required class="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-[#ff5733]">
+        <textarea name="Message" placeholder="Tell us about your experience..." rows="4" required class="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-[#ff5733]"></textarea>
+        <button type="submit" class="px-6 py-3 bg-[#ff5733] rounded-full hover:bg-[#ff7f50] text-white font-bold w-full">Submit Application</button>
       </form>
     </section>
 
-    <!-- Careers -->
-    <section id="careers" class="mb-16">
-      <h2 class="text-3xl font-bold text-center section-title mb-8">انضم إلى فريقنا</h2>
-      <p class="text-center text-gray-300 mb-6">إذا كنت مبدعًا وتحب التقنية، قدم طلبك الآن.</p>
-      <form action="https://formsubmit.co/farisxboujddain@gmail.com" method="POST"
-        class="max-w-xl mx-auto bg-[#1e1e2f] p-6 rounded-3xl space-y-4">
-        <input type="text" name="name" placeholder="اسمك الكامل" required
-          class="w-full p-3 rounded-xl bg-[#0d1117] border border-[#00b4ff] text-white">
-        <input type="email" name="email" placeholder="بريدك الإلكتروني" required
-          class="w-full p-3 rounded-xl bg-[#0d1117] border border-[#00b4ff] text-white">
-        <textarea name="message" rows="4" placeholder="أخبرنا عن خبرتك ولماذا تريد الانضمام"
-          class="w-full p-3 rounded-xl bg-[#0d1117] border border-[#00b4ff] text-white"></textarea>
-        <button type="submit"
-          class="bg-[#00b4ff] hover:bg-[#0093cc] w-full p-3 rounded-full text-white font-bold">إرسال الطلب</button>
+    <!-- Contact Section -->
+    <section id="contact" class="mb-20">
+      <h2 class="text-4xl font-bold text-center mb-12 relative section-title">Contact Us</h2>
+      <form class="contact-form bg-[#24244a] p-8 rounded-2xl shadow-xl max-w-xl mx-auto space-y-4">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="Name" placeholder="Your Name" required class="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-[#ff5733]">
+        <input type="email" name="Email" placeholder="Your Email" required class="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-[#ff5733]">
+        <textarea name="Message" placeholder="Write your message here..." rows="4" required class="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-[#ff5733]"></textarea>
+        <button type="submit" class="px-6 py-3 bg-[#ff5733] rounded-full hover:bg-[#ff7f50] text-white font-bold w-full">Send</button>
       </form>
-    </section>
 
-    <!-- Contact -->
-    <section id="contact" class="mb-16">
-      <h2 class="text-3xl font-bold text-center section-title mb-8">تواصل معنا</h2>
-      <div class="text-center">
-        <p class="mb-4">📧 <a href="mailto:farisxboujddain@gmail.com" class="text-[#00b4ff]">farisxboujddain@gmail.com</a></p>
-        <p>📱 <a href="tel:0722456101" class="text-[#00b4ff]">0722456101</a></p>
-        <a href="https://x.com/FBoujeddaien?t=j-5B--nhTpEV4E2LRuYoYg&s=09"
-           class="inline-block mt-4 text-[#00b4ff] hover:underline">تابعنا على تويتر</a>
+      <!-- WhatsApp Button -->
+      <div class="text-center mt-8">
+        <a href="https://wa.me/212722456101?text=Hello%2C%20I%20have%20a%20business%20inquiry" target="_blank"
+           class="inline-flex items-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-bold rounded-full shadow-lg transition-colors duration-300">
+          💬 Contact us on WhatsApp
+        </a>
       </div>
     </section>
+
   </main>
 
-  <footer class="bg-[#161b22] text-center py-4 text-gray-400">
-    &copy; 2025 AxiomTech. جميع الحقوق محفوظة.
+  <!-- Popup -->
+  <div id="popup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-[#24244a] p-8 rounded-2xl shadow-xl text-center max-w-sm">
+      <h3 class="text-2xl font-bold text-white mb-2">✅ Sent Successfully</h3>
+      <p class="text-gray-300">Thank you! Your form has been submitted.</p>
+      <button onclick="document.getElementById('popup').style.display='none'" class="mt-4 px-6 py-2 bg-[#ff5733] text-white rounded-full hover:bg-[#ff7f50]">Close</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-[#24244a] text-center text-gray-400 py-6 rounded-t-3xl">
+    <p>&copy; 2025 AxiomTech. All rights reserved.</p>
+    <a href="https://x.com/FBoujeddaien?t=j-5B--nhTpEV4E2LRuYoYg&s=09" target="_blank" class="inline-block mt-2 hover:text-[#ff5733]">
+      Follow us on Twitter (X)
+    </a>
   </footer>
+
+  <script>
+    const forms = document.querySelectorAll(".contact-form");
+    const popup = document.getElementById("popup");
+    forms.forEach(form => {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        fetch("https://formsubmit.co/ajax/farisxboujddain@gmail.com", {
+          method: "POST",
+          body: new FormData(form)
+        })
+        .then(() => { form.reset(); popup.style.display = "flex"; })
+        .catch(() => alert("Error sending message!"));
+      });
+    });
+  </script>
 
 </body>
 </html>

@@ -3,6 +3,130 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AxiomTech - Integrated Tech Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #1a1a2e;
+      color: #e0e0e0;
+    }
+    .section-title {
+      position: relative;
+      display: inline-block;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 50%;
+      height: 4px;
+      background-color: #ff5733;
+      border-radius: 2px;
+    }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="overflow-x-hidden">
+
+  <!-- Header -->
+  <header class="bg-[#24244a] text-white py-4 px-6 shadow-lg rounded-b-3xl fixed w-full z-50">
+    <nav class="container mx-auto flex justify-between items-center flex-wrap">
+      <a href="#hero" class="text-3xl font-bold text-[#ff5733] hover:text-[#ff7f50]">AxiomTech</a>
+      <ul class="flex space-x-6">
+        <li><a href="#services" class="hover:text-[#ff5733]">Services</a></li>
+        <li><a href="#portfolio" class="hover:text-[#ff5733]">Portfolio</a></li>
+        <li><a href="#about" class="hover:text-[#ff5733]">About</a></li>
+        <li><a href="#join-us" class="hover:text-[#ff5733]">Join Us</a></li>
+        <li><a href="#contact" class="bg-[#ff5733] hover:bg-[#ff7f50] px-4 py-2 rounded-full">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="pt-28 px-4">
+
+    <!-- Hero Section -->
+    <section id="hero" class="text-center mb-20">
+      <h1 class="text-5xl md:text-7xl font-extrabold text-[#ff5733] mb-4">AxiomTech</h1>
+      <p class="text-xl text-gray-300 mb-6">Advanced tech solutions to boost your business growth.</p>
+      <a href="#services" class="px-8 py-4 bg-[#ff5733] rounded-full text-white hover:bg-[#ff7f50]">Explore Services</a>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="mb-20">
+      <h2 class="text-4xl font-bold text-center mb-12 section-title">Our Services</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-[#24244a] p-6 rounded-2xl shadow-lg text-center">
+          <div class="text-5xl mb-3">💻</div>
+          <h3 class="text-xl font-bold">Web Development</h3>
+          <p class="text-gray-400">Modern websites & apps with latest technologies.</p>
+        </div>
+        <div class="bg-[#24244a] p-6 rounded-2xl shadow-lg text-center">
+          <div class="text-5xl mb-3">📱</div>
+          <h3 class="text-xl font-bold">Mobile Apps</h3>
+          <p class="text-gray-400">Native & hybrid apps for iOS & Android.</p>
+        </div>
+        <div class="bg-[#24244a] p-6 rounded-2xl shadow-lg text-center">
+          <div class="text-5xl mb-3">📊</div>
+          <h3 class="text-xl font-bold">Business Solutions</h3>
+          <p class="text-gray-400">Custom software for business management.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join Us Section -->
+    <section id="join-us" class="mb-20 text-center">
+      <h2 class="text-4xl font-bold text-[#ff5733] mb-6 section-title">Join Our Team</h2>
+      <form action="https://formsubmit.co/your-email@example.com" method="POST" class="bg-[#24244a] p-8 rounded-2xl shadow-xl max-w-xl mx-auto space-y-4">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://farisxboujddain-cmyk.github.io/thankyou.html">
+        <input type="text" name="Full Name" placeholder="Full Name" required class="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-[#ff5733]">
+        <input type="email" name="Email" placeholder="Email" required class="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-[#ff5733]">
+        <input type="text" name="Job Title" placeholder="Desired Job Title" required class="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-[#ff5733]">
+        <textarea name="Message" placeholder="Write a short message about your skills..." rows="4" class="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-[#ff5733]"></textarea>
+        <button type="submit" class="px-6 py-3 bg-[#ff5733] rounded-full hover:bg-[#ff7f50] text-white font-bold">Submit</button>
+      </form>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="mb-20">
+      <h2 class="text-4xl font-bold text-center mb-12 section-title">Request a Service</h2>
+      <form action="https://formsubmit.co/your-email@example.com" method="POST" class="bg-[#24244a] p-8 rounded-2xl shadow-xl max-w-xl mx-auto space-y-4">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://farisxboujddain-cmyk.github.io/thankyou.html">
+        <input type="text" name="Name" placeholder="Your Name" required class="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-[#ff5733]">
+        <input type="email" name="Email" placeholder="Your Email" required class="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-[#ff5733]">
+        <select name="Service" required class="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-[#ff5733]">
+          <option value="">Select Service</option>
+          <option>Website Development</option>
+          <option>Mobile App</option>
+          <option>Business Software</option>
+          <option>Other</option>
+        </select>
+        <input type="text" name="Budget" placeholder="Estimated Budget (Optional)" class="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-[#ff5733]">
+        <textarea name="Message" placeholder="Describe your project..." rows="4" required class="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-[#ff5733]"></textarea>
+        <button type="submit" class="px-6 py-3 bg-[#ff5733] rounded-full hover:bg-[#ff7f50] text-white font-bold">Send Request</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#24244a] text-center text-gray-400 py-6 rounded-t-3xl">
+    <p>&copy; 2025 AxiomTech. All rights reserved.</p>
+    <a href="https://x.com/FBoujeddaien?t=j-5B--nhTpEV4E2LRuYoYg&s=09" target="_blank" class="inline-block mt-2 hover:text-[#ff5733]">
+      Follow us on Twitter (X)
+    </a>
+  </footer>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thank You - AxiomTech</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">

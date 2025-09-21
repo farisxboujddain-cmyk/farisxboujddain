@@ -1,47 +1,272 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AxiomTech Contact Form</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      background-color: #1a1a2e;
-      color: white;
-      font-family: sans-serif;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AXIOMTECH - حلول تكنولوجية مبتكرة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #0d1222;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+        .header-bg {
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://placehold.co/1920x1080/0d1222/e2e8f0?text=AXIOMTECH');
+            background-size: cover;
+            background-position: center;
+        }
+        .nav-link {
+            transition: color 0.3s, transform 0.3s;
+        }
+        .nav-link:hover {
+            color: #63b3ed;
+            transform: scale(1.1);
+        }
+        .section-title {
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 80px;
+            height: 4px;
+            background-color: #63b3ed;
+            border-radius: 2px;
+        }
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            background-color: #1a202c;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .btn {
+            background-color: #4c51bf;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .btn:hover {
+            background-color: #5a67d8;
+            transform: scale(1.05);
+        }
+        .message-box {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #4a5568;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            text-align: center;
+        }
+        .message-box button {
+            margin-top: 10px;
+            background-color: #63b3ed;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
-<body class="flex items-center justify-center h-screen">
+<body>
 
-  <form action="https://formspree.io/f/your_form_id" method="POST"
-        class="bg-[#24244a] p-10 rounded-3xl shadow-xl max-w-md w-full space-y-6">
-    <h2 class="text-3xl font-bold text-center text-[#ff5733]">Contact Us</h2>
+    <!-- Header & Navigation -->
+    <header class="header-bg py-8 md:py-16 text-center text-white">
+        <nav class="container mx-auto px-4 flex justify-between items-center mb-10">
+            <a href="#" class="text-2xl md:text-3xl font-bold tracking-wide">AXIOMTECH</a>
+            <ul class="flex space-x-4 md:space-x-8">
+                <li><a href="#home" class="nav-link">الرئيسية</a></li>
+                <li><a href="#services" class="nav-link">خدماتنا</a></li>
+                <li><a href="#join" class="nav-link">انضم إلينا</a></li>
+            </ul>
+        </nav>
+        <div class="container mx-auto px-4 mt-16 md:mt-32">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">نحن نبني مستقبل التكنولوجيا</h1>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8">حلول تكنولوجية مبتكرة لشركاتك الناشئة و الكبيرة</p>
+            <a href="#services" class="btn text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl">استكشف خدماتنا</a>
+        </div>
+    </header>
 
-    <div>
-      <label for="name" class="block mb-2 font-semibold">Full Name</label>
-      <input type="text" name="name" id="name" required
-             class="w-full px-4 py-2 rounded-xl bg-[#1a1a2e] border border-[#ff5733] text-white">
+    <!-- Services Section -->
+    <section id="services" class="py-16 md:py-24 bg-gray-900">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title mx-auto w-fit">خدماتنا التجارية</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service Card 1 -->
+                <div class="card p-6 rounded-lg">
+                    <span class="text-6xl mb-4 block">📊</span>
+                    <h3 class="text-xl font-bold mb-2">تحليل التقارير</h3>
+                    <p class="text-gray-400">نقدم تحليلات دقيقة وشاملة لبيانات شركتك، مما يتيح لك اتخاذ قرارات مدروسة قائمة على حقائق.</p>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="card p-6 rounded-lg">
+                    <span class="text-6xl mb-4 block">🎨</span>
+                    <h3 class="text-xl font-bold mb-2">تصميم شعار وعلامة تجارية</h3>
+                    <p class="text-gray-400">نحول فكرتك إلى هوية بصرية فريدة تعكس قيم شركتك وتبرزها في السوق.</p>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="card p-6 rounded-lg">
+                    <span class="text-6xl mb-4 block">📈</span>
+                    <h3 class="text-xl font-bold mb-2">استراتيجيات التسويق</h3>
+                    <p class="text-gray-400">نخطط وننفذ حملات تسويقية رقمية مبتكرة لزيادة وصولك لجمهورك المستهدف وتحقيق مبيعات قياسية.</p>
+                </div>
+                <!-- Service Card 4 -->
+                <div class="card p-6 rounded-lg">
+                    <span class="text-6xl mb-4 block">💼</span>
+                    <h3 class="text-xl font-bold mb-2">أعمال تجارية متكاملة</h3>
+                    <p class="text-gray-400">نقدم حلولاً شاملة لتطوير أعمالك، من التخطيط الأولي حتى التنفيذ والدعم المستمر.</p>
+                </div>
+            </div>
+
+            <!-- Contact Form for Business Services -->
+            <div class="mt-16 bg-gray-800 p-8 rounded-lg max-w-2xl mx-auto text-right">
+                <h3 class="text-2xl font-bold mb-4 text-center">اطلب خدماتنا</h3>
+                <form id="serviceForm" action="https://formspree.io/f/farisxboujddain@gmail.com" method="POST" class="space-y-4">
+                    <div>
+                        <label for="service_name" class="block text-sm font-medium mb-1">اسمك الكامل</label>
+                        <input type="text" id="service_name" name="الاسم" required
+                               class="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="service_email" class="block text-sm font-medium mb-1">بريدك الإلكتروني</label>
+                        <input type="email" id="service_email" name="البريد الإلكتروني" required
+                               class="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="service_type" class="block text-sm font-medium mb-1">نوع الخدمة المطلوبة</label>
+                        <select id="service_type" name="نوع_الخدمة" required
+                                class="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">-- اختر خدمة --</option>
+                            <option value="تحليل تقارير">تحليل تقارير</option>
+                            <option value="تصميم شعار">تصميم شعار وعلامة تجارية</option>
+                            <option value="استراتيجيات تسويق">استراتيجيات تسويق</option>
+                            <option value="أعمال تجارية متكاملة">أعمال تجارية متكاملة</option>
+                            <option value="أخرى">أخرى</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="service_details" class="block text-sm font-medium mb-1">تفاصيل طلبك</label>
+                        <textarea id="service_details" name="تفاصيل_الطلب" rows="5" placeholder="اذكر هنا التفاصيل التي تريدها" required
+                                  class="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    </div>
+                    <button type="submit" class="btn text-white font-bold py-2 px-6 rounded-md w-full">إرسال الطلب</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Us Section -->
+    <section id="join" class="py-16 md:py-24 bg-gray-900">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title mx-auto w-fit">انضم إلى عائلة AXIOMTECH</h2>
+            <p class="max-w-3xl mx-auto text-gray-400 mb-8">
+                نحن نبحث دائمًا عن المواهب المبدعة للانضمام إلى فريقنا. إذا كنت شغوفًا بالتكنولوجيا ولديك مهارات قوية في مجالات مثل **البرمجة، تصميم الجرافيك، أو التسويق الرقمي**، فلا تتردد في الانضمام.
+            </p>
+            <a href="https://github.com/your_github_org_link" class="btn text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl mb-8" target="_blank">
+                <img src="https://img.icons8.com/color/48/github--v1.png" alt="Github" class="inline-block w-6 h-6 ml-2">
+                قم بزيارة صفحتنا على Github
+            </a>
+
+            <!-- Job Application Form -->
+            <div class="mt-16 bg-gray-800 p-8 rounded-lg max-w-2xl mx-auto text-right">
+                <h3 class="text-2xl font-bold mb-4 text-center">قدم طلبك الآن</h3>
+                <form id="jobForm" action="https://formspree.io/f/farisxboujddain@gmail.com" method="POST" class="space-y-4">
+                    <div>
+                        <label for="job_name" class="block text-sm font-medium mb-1">الاسم الكامل</label>
+                        <input type="text" id="job_name" name="الاسم" required
+                               class="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="job_email" class="block text-sm font-medium mb-1">بريدك الإلكتروني</label>
+                        <input type="email" id="job_email" name="البريد الإلكتروني" required
+                               class="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="job_skills" class="block text-sm font-medium mb-1">مهاراتك</label>
+                        <textarea id="job_skills" name="المهارات" rows="5" placeholder="اذكر مهاراتك الرئيسية وما تجيده (مثال: تطوير الويب, تصميم الجرافيك, التسويق الرقمي)" required
+                                  class="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    </div>
+                    <button type="submit" class="btn text-white font-bold py-2 px-6 rounded-md w-full">إرسال الطلب</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-6 text-center text-gray-400">
+        <p>&copy; 2024 AXIOMTECH. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <!-- Message Box -->
+    <div id="messageBox" class="message-box">
+        <p id="messageText"></p>
+        <button onclick="document.getElementById('messageBox').style.display='none';">إغلاق</button>
     </div>
 
-    <div>
-      <label for="email" class="block mb-2 font-semibold">Email</label>
-      <input type="email" name="email" id="email" required
-             class="w-full px-4 py-2 rounded-xl bg-[#1a1a2e] border border-[#ff5733] text-white">
-    </div>
+    <script>
+        const messageBox = document.getElementById('messageBox');
+        const messageText = document.getElementById('messageText');
 
-    <div>
-      <label for="message" class="block mb-2 font-semibold">Message</label>
-      <textarea name="message" id="message" rows="4" required
-                class="w-full px-4 py-2 rounded-xl bg-[#1a1a2e] border border-[#ff5733] text-white"></textarea>
-    </div>
+        // دالة لعرض رسالة للمستخدم
+        function showMessage(message, isSuccess) {
+            messageText.textContent = message;
+            messageBox.style.display = 'block';
+            if (isSuccess) {
+                messageBox.style.backgroundColor = '#48bb78'; // لون أخضر للنجاح
+            } else {
+                messageBox.style.backgroundColor = '#f56565'; // لون أحمر للفشل
+            }
+        }
 
-    <button type="submit"
-            class="w-full bg-[#ff5733] hover:bg-[#ff7f50] font-bold py-3 rounded-full">
-      Send Message
-    </button>
-  </form>
+        const forms = document.querySelectorAll('form');
+        forms.forEach(form => {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const submitBtn = form.querySelector('button[type="submit"]');
 
+                submitBtn.disabled = true;
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'جاري الإرسال...';
+
+                try {
+                    const response = await fetch(form.action, {
+                        method: form.method,
+                        body: new FormData(form),
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        showMessage('✅ تم استلام طلبك بنجاح! سنقوم بمراجعته قريباً.', true);
+                        form.reset();
+                    } else {
+                        throw new Error('فشل الإرسال.');
+                    }
+                } catch (error) {
+                    console.error('حدث خطأ في الإرسال:', error);
+                    showMessage('❌ حدث خطأ أثناء الإرسال، يرجى المحاولة مرة أخرى.', false);
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                }
+            });
+        });
+    </script>
 </body>
 </html>
+
+  

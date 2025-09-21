@@ -3,23 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XIOMTICH - حلول التجارة الإلكترونية والتسويق</title>
+    <title>XIOMTICH - حلول التجارة الإلكترونية والتسويق المتكاملة</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-            --success-color: #27ae60;
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --accent-color: #e53e3e;
+            --light-color: #f7fafc;
+            --dark-color: #2d3748;
+            --success-color: #38a169;
+            --gradient-start: #1a365d;
+            --gradient-end: #2b6cb0;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Tajawal', sans-serif;
         }
         
         body {
@@ -42,8 +45,8 @@
             padding: 15px 0;
             position: sticky;
             top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
         .header-content {
@@ -53,8 +56,8 @@
         }
         
         .logo {
-            font-size: 28px;
-            font-weight: bold;
+            font-size: 32px;
+            font-weight: 800;
             color: white;
             text-decoration: none;
             display: flex;
@@ -62,7 +65,8 @@
         }
         
         .logo span {
-            color: var(--secondary-color);
+            color: #63b3ed;
+            margin-left: 5px;
         }
         
         nav ul {
@@ -79,193 +83,303 @@
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
-            padding: 5px 10px;
+            padding: 8px 15px;
             border-radius: 4px;
         }
         
         nav ul li a:hover {
-            color: var(--secondary-color);
+            color: #63b3ed;
+            background: rgba(255, 255, 255, 0.1);
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            color: white;
+            padding: 120px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,218.7C672,224,768,160,864,138.7C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>');
             background-size: cover;
             background-position: center;
-            color: white;
-            padding: 100px 0;
-            text-align: center;
+            opacity: 0.1;
         }
         
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 20px;
+            font-weight: 800;
         }
         
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             max-width: 700px;
-            margin: 0 auto 30px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
         }
         
         .btn {
             display: inline-block;
-            background-color: var(--secondary-color);
+            background-color: var(--accent-color);
             color: white;
-            padding: 12px 25px;
-            border-radius: 5px;
+            padding: 15px 35px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(229, 62, 62, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: var(--secondary-color);
+            transition: all 0.3s;
+            z-index: -1;
+        }
+        
+        .btn:hover::before {
+            width: 100%;
         }
         
         .btn:hover {
-            background-color: #2980b9;
+            box-shadow: 0 4px 15px rgba(43, 108, 176, 0.3);
+            transform: translateY(-3px);
         }
         
         /* Sections */
         .section {
-            padding: 80px 0;
+            padding: 100px 0;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
             color: var(--primary-color);
-            font-size: 2.5rem;
+            font-size: 2.8rem;
+            font-weight: 700;
+            position: relative;
         }
         
         .section-title::after {
             content: "";
             display: block;
-            width: 80px;
-            height: 4px;
-            background-color: var(--secondary-color);
-            margin: 15px auto;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+            margin: 20px auto;
+            border-radius: 10px;
         }
         
         /* Services */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
         }
         
         .service-card {
             background-color: white;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            top: 0;
         }
         
         .service-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
         
         .service-content {
-            padding: 25px;
+            padding: 30px;
         }
         
         .service-icon {
-            font-size: 40px;
+            font-size: 50px;
             color: var(--secondary-color);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         .service-card h3 {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        
+        .service-card p {
+            color: #4a5568;
+            margin-bottom: 25px;
         }
         
         /* Forms */
         .form-container {
             background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            max-width: 800px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 40px;
+            max-width: 850px;
             margin: 0 auto;
         }
         
+        .form-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+        
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: 500;
+            color: var(--dark-color);
         }
         
         .form-control {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
             font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.2);
         }
         
         textarea.form-control {
-            min-height: 150px;
+            min-height: 180px;
             resize: vertical;
         }
         
         .submit-btn {
-            background-color: var(--secondary-color);
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
             color: white;
             border: none;
-            padding: 12px 25px;
-            border-radius: 5px;
+            padding: 16px 35px;
+            border-radius: 50px;
             cursor: pointer;
             font-size: 16px;
             font-weight: bold;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
+            display: block;
+            margin: 30px auto 0;
+            width: 200px;
+            box-shadow: 0 4px 15px rgba(43, 108, 176, 0.3);
         }
         
         .submit-btn:hover {
-            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(43, 108, 176, 0.4);
         }
         
         /* Footer */
         footer {
             background-color: var(--dark-color);
             color: white;
-            padding: 50px 0 20px;
+            padding: 70px 0 30px;
+            position: relative;
+        }
+        
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
         }
         
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
         }
         
         .footer-section h3 {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             font-size: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-section h3::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            border-radius: 3px;
         }
         
         .footer-section p {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
         }
         
         .social-links a {
-            display: inline-block;
-            margin-right: 15px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
             color: white;
             font-size: 20px;
-            transition: color 0.3s;
+            border-radius: 50%;
+            transition: all 0.3s;
         }
         
         .social-links a:hover {
-            color: var(--secondary-color);
+            background: var(--secondary-color);
+            transform: translateY(-5px);
         }
         
         .footer-bottom {
             text-align: center;
-            padding-top: 20px;
+            padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
         }
         
         /* Success Message */
@@ -273,13 +387,46 @@
             display: none;
             background-color: var(--success-color);
             color: white;
-            padding: 15px;
-            border-radius: 5px;
+            padding: 20px;
+            border-radius: 8px;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(56, 161, 105, 0.3);
+        }
+        
+        /* Loading spinner */
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 4px solid var(--secondary-color);
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         
         /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title {
+                font-size: 2.3rem;
+            }
+        }
+        
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -295,17 +442,76 @@
                 margin: 5px 10px;
             }
             
+            .hero {
+                padding: 100px 0 80px;
+            }
+            
             .hero h1 {
                 font-size: 2.2rem;
             }
             
             .hero p {
-                font-size: 1rem;
+                font-size: 1.1rem;
+            }
+            
+            .section {
+                padding: 80px 0;
             }
             
             .section-title {
                 font-size: 2rem;
             }
+            
+            .form-container {
+                padding: 25px;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        
+        /* Stats section */
+        .stats {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .stat-item {
+            padding: 30px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #fff, #c2d5ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .stat-text {
+            font-size: 1.2rem;
+            opacity: 0.9;
         }
     </style>
 </head>
@@ -330,9 +536,34 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <h1>XIOMTICH - حلول احترافية لنمو أعمالك</h1>
-            <p>نقدم خدمات متكاملة في مجال التجارة الإلكترونية والتسويق الرقمي لمساعدة عملك على النمو والازدهار في العالم الرقمي.</p>
-            <a href="#services" class="btn">اكتشف خدماتنا</a>
+            <h1 class="animate">XIOMTICH - قيادة التحول الرقمي</h1>
+            <p class="animate delay-1">نقدم حلولاً متكاملة في مجال التجارة الإلكترونية والتسويق الرقمي لتحقيق النمو والازدهار لأعمالك في العالم الرقمي.</p>
+            <a href="#services" class="btn animate delay-2">اكتشف خدماتنا</a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <h2 class="section-title">إحصائياتنا</h2>
+            <div class="stats-grid">
+                <div class="stat-item animate">
+                    <div class="stat-number" data-count="250">0</div>
+                    <div class="stat-text">مشروع ناجح</div>
+                </div>
+                <div class="stat-item animate delay-1">
+                    <div class="stat-number" data-count="98">0</div>
+                    <div class="stat-text">عملاء سعداء</div>
+                </div>
+                <div class="stat-item animate delay-2">
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-text">خبرة في المجال</div>
+                </div>
+                <div class="stat-item animate delay-3">
+                    <div class="stat-number" data-count="40">0</div>
+                    <div class="stat-text">فريق محترف</div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -341,41 +572,63 @@
         <div class="container">
             <h2 class="section-title">خدماتنا</h2>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card animate">
                     <div class="service-content">
                         <div class="service-icon">
                             <i class="fas fa-palette"></i>
                         </div>
                         <h3>تصميم الشعارات</h3>
                         <p>نصمم شعارات فريدة وجذابة تعبر عن هوية علامتك التجارية وتترك انطباعًا قويًا لدى عملائك.</p>
+                        <ul>
+                            <li>شعارات مبتكرة</li>
+                            <li>هوية بصرية متكاملة</li>
+                            <li>دليل استخدام الشعار</li>
+                        </ul>
                     </div>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card animate delay-1">
                     <div class="service-content">
                         <div class="service-icon">
                             <i class="fas fa-chart-line"></i>
                         </div>
                         <h3>التقارير التحليلية</h3>
                         <p>نقدم تقارير مفصلة وتحليلات دقيقة لأداء أعمالك تساعدك على اتخاذ القرارات الصحيحة.</p>
+                        <ul>
+                            <li>تحليل أداء شامل</li>
+                            <li>تقارير مخصصة</li>
+                            <li>توصيات قابلة للتطبيق</li>
+                        </ul>
                     </div>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card animate delay-2">
                     <div class="service-content">
                         <div class="service-icon">
                             <i class="fas fa-lightbulb"></i>
                         </div>
                         <h3>نصائح احترافية</h3>
                         <p>نقدم نصائح وخبرات احترافية لتحسين أداء أعمالك وزيادة أرباحك في السوق الرقمي.</p>
+                        <ul>
+                            <li>استشارات متخصصة</li>
+                            <li>خطط تحسين مستمر</li>
+                            <li>أفضل الممارسات</li>
+                        </ul>
                     </div>
                 </div>
             </div>
             
-            <div class="form-container" style="margin-top: 50px;">
-                <h3 style="text-align: center; margin-bottom: 20px;">اطلب خدمة مخصصة</h3>
+            <div class="form-container" style="margin-top: 70px;">
+                <h3 class="form-title">اطلب خدمة مخصصة</h3>
                 <div id="service-success" class="success-message">
-                    تم إرسال طلب الخدمة بنجاح! سنتواصل معك قريبًا.
+                    <i class="fas fa-check-circle"></i> تم إرسال طلب الخدمة بنجاح! سنتواصل معك قريبًا.
+                </div>
+                <div id="service-error" class="success-message" style="background-color: #e53e3e; display: none;">
+                    <i class="fas fa-exclamation-circle"></i> حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى.
+                </div>
+                <div class="loading" id="service-loading">
+                    <div class="spinner"></div>
+                    <p>جاري إرسال طلبك...</p>
                 </div>
                 <form id="service-form">
                     <div class="form-group">
@@ -387,189 +640,3 @@
                             <option value="advice">نصائح احترافية</option>
                         </select>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="name">الاسم الكامل</label>
-                        <input type="text" class="form-control" id="name" placeholder="أدخل اسمك الكامل" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">البريد الإلكتروني</label>
-                        <input type="email" class="form-control" id="email" placeholder="أدخل بريدك الإلكتروني" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="service-details">تفاصيل الخدمة المطلوبة</label>
-                        <textarea class="form-control" id="service-details" placeholder="صف الخدمة التي تحتاجها بالتفصيل" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">إرسال الطلب</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- E-commerce Strategies Section -->
-    <section id="ecommerce" class="section" style="background-color: #f5f5f5;">
-        <div class="container">
-            <h2 class="section-title">استراتيجيات التجارة الإلكترونية</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-content">
-                        <h3>تطوير متجر إلكتروني</h3>
-                        <p>نساعدك في إنشاء وتطوير متجر إلكتروني متكامل يلبي احتياجات عملك ويوفر تجربة تسوق متميزة لعملائك.</p>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-content">
-                        <h3>تحسين معدلات التحويل</h3>
-                        <p>نعمل على تحسين تجربة المستخدم وزيادة معدلات التحويل في متجرك الإلكتروني لتعزيز مبيعاتك وأرباحك.</p>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-content">
-                        <h3>إدارة المخزون والطلبات</h3>
-                        <p>نقدم حلولاً متكاملة لإدارة المخزون وتنظيم الطلبات لضمان كفاءة عملياتك وتحسين خدمة العملاء.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Marketing Strategies Section -->
-    <section id="marketing" class="section">
-        <div class="container">
-            <h2 class="section-title">استراتيجيات التسويق</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-content">
-                        <h3>التسويق عبر وسائل التواصل</h3>
-                        <p>نخطط وننفذ حملات تسويقية فعالة على منصات التواصل الاجتماعي لتعزيز وجودك الرقمي وزيادة تفاعل العملاء.</p>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-content">
-                        <h3>تحسين محركات البحث (SEO)</h3>
-                        <p>نعمل على تحسين ظهور موقعك في نتائج محركات البحث لزيادة الزيارات العضوية وتعزيز المبيعات.</p>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-content">
-                        <h3>التسويق بالمحتوى</h3>
-                        <p>نطور استراتيجيات محتوى جذابة وفعالة تساعد على بناء الثقة مع جمهورك وزيادة ولاء العلامة التجارية.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Employment Section -->
-    <section id="employment" class="section" style="background-color: #f5f5f5;">
-        <div class="container">
-            <h2 class="section-title">التوظيف</h2>
-            <div class="form-container">
-                <h3 style="text-align: center; margin-bottom: 20px;">قدم طلب التوظيف</h3>
-                <div id="employment-success" class="success-message">
-                    تم إرسال طلب التوظيف بنجاح! سنراجع طلبك وسنتواصل معك قريبًا.
-                </div>
-                <form id="employment-form">
-                    <div class="form-group">
-                        <label for="full-name">الاسم الكامل</label>
-                        <input type="text" class="form-control" id="full-name" placeholder="أدخل اسمك الكامل" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="employment-email">البريد الإلكتروني</label>
-                        <input type="email" class="form-control" id="employment-email" placeholder="أدخل بريدك الإلكتروني" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="position">المجال الذي تبرع فيه</label>
-                        <input type="text" class="form-control" id="position" placeholder="حدد المجال الذي تبرع فيه" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="experience">الخبرات والمهارات</label>
-                        <textarea class="form-control" id="experience" placeholder="صف خبراتك ومهاراتك بالتفصيل" required></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">لماذا تريد الانضمام إلى فريقنا؟</label>
-                        <textarea class="form-control" id="message" placeholder="أخبرنا أكثر عن دوافعك للانضمام إلى XIOMTICH" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">تقديم طلب التوظيف</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>عن XIOMTICH</h3>
-                    <p>نحن شركة متخصصة في تقديم حلول التجارة الإلكترونية والتسويق الرقمي، نعمل على مساعدة الشركات على النمو والازدهار في العالم الرقمي.</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>اتصل بنا</h3>
-                    <p><i class="fas fa-envelope"></i> farisxboujddain@gmail.com</p>
-                    <div class="social-links">
-                        <a href="https://x.com/FBoujeddaien?t=hHCisQygIC-LgMhVtKlPLw&s=09" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>روابط سريعة</h3>
-                    <p><a href="#services">الخدمات</a></p>
-                    <p><a href="#ecommerce">استراتيجيات التجارة</a></p>
-                    <p><a href="#marketing">استراتيجيات التسويق</a></p>
-                    <p><a href="#employment">التوظيف</a></p>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2023 XIOMTICH. جميع الحقوق محفوظة.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Service Form Handling
-        document.getElementById('service-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Simulate form submission
-            const serviceSuccess = document.getElementById('service-success');
-            serviceSuccess.style.display = 'block';
-            
-            // Reset form
-            this.reset();
-            
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                serviceSuccess.style.display = 'none';
-            }, 5000);
-        });
-        
-        // Employment Form Handling
-        document.getElementById('employment-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Simulate form submission
-            const employmentSuccess = document.getElementById('employment-success');
-            employmentSuccess.style.display = 'block';
-            
-            // Reset form
-            this.reset();
-            
-  

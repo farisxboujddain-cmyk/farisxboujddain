@@ -1,293 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AxiomTech - Integrated Tech Solutions</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #1a1a2e;
-            color: #e0e0e0;
-        }
-        .container {
-            max-width: 1200px;
-            margin: auto;
-        }
-        .section-title {
-            position: relative;
-            display: inline-block;
-        }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 50%;
-            height: 4px;
-            background-color: #ff5733;
-            border-radius: 2px;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AxiomTech - Integrated Tech Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+  <meta name="description" content="AxiomTech provides web development, mobile apps, and business solutions to help your business grow.">
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #1a1a2e; color: #e0e0e0; }
+    html { scroll-behavior: smooth; }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 50%;
+      height: 4px;
+      background-color: #ff5733;
+      border-radius: 2px;
+    }
+  </style>
 </head>
 <body class="overflow-x-hidden">
 
-    <!-- Header Section -->
-    <header class="bg-[#24244a] text-white py-4 px-6 shadow-lg rounded-b-3xl fixed w-full z-50">
-        <nav class="container mx-auto flex justify-between items-center flex-wrap gap-4">
-            <a href="#hero" class="text-3xl font-bold text-[#ff5733] hover:text-[#ff7f50] transition-colors duration-300">AxiomTech</a>
-            <div class="flex-grow flex justify-end">
-                <ul class="flex space-x-4 md:space-x-8 items-center flex-wrap justify-end gap-2">
-                    <li><a href="#services" class="text-white hover:text-[#ff5733] transition-colors duration-300 font-semibold text-lg">Services</a></li>
-                    <li><a href="#portfolio" class="text-white hover:text-[#ff5733] transition-colors duration-300 font-semibold text-lg">Portfolio</a></li>
-                    <li><a href="#about" class="text-white hover:text-[#ff5733] transition-colors duration-300 font-semibold text-lg">About Us</a></li>
-                    <li><a href="#join-us" class="text-white hover:text-[#ff5733] transition-colors duration-300 font-semibold text-lg">Join Our Team</a></li>
-                    <li><a href="#contact" class="bg-[#ff5733] hover:bg-[#ff7f50] px-6 py-2 rounded-full text-white transition-colors duration-300">Contact Us</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+  <!-- Header -->
+  <header class="bg-[#24244a] text-white py-4 px-6 shadow-lg rounded-b-3xl fixed w-full z-50">
+    <nav class="container mx-auto flex justify-between items-center flex-wrap gap-4">
+      <a href="#hero" class="text-3xl font-bold text-[#ff5733] hover:text-[#ff7f50]">AxiomTech</a>
+      <ul class="flex space-x-4 md:space-x-8 items-center flex-wrap justify-end gap-2">
+        <li><a href="#services" class="hover:text-[#ff5733] font-semibold text-lg">Services</a></li>
+        <li><a href="#portfolio" class="hover:text-[#ff5733] font-semibold text-lg">Portfolio</a></li>
+        <li><a href="#about" class="hover:text-[#ff5733] font-semibold text-lg">About Us</a></li>
+        <li><a href="#join-us" class="hover:text-[#ff5733] font-semibold text-lg">Join Our Team</a></li>
+        <li><a href="#contact" class="bg-[#ff5733] hover:bg-[#ff7f50] px-6 py-2 rounded-full">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main class="py-24 px-4">
+  <main class="py-24 px-4">
 
-        <!-- Hero Section -->
-        <section id="hero" class="container text-center mb-24 animate-fade-in pt-16">
-            <div class="flex flex-col items-center justify-center">
-                <h1 class="text-5xl md:text-7xl font-extrabold text-[#ff5733] mb-4 drop-shadow-lg">AxiomTech</h1>
-                <p class="text-xl md:text-2xl text-gray-300 mb-8">We provide advanced technological solutions to boost your business growth.</p>
-                <a href="#services" class="inline-block px-10 py-5 bg-[#ff5733] text-white font-bold rounded-full shadow-lg hover:bg-[#ff7f50] transition-colors duration-300 transform hover:scale-105">
-                    Explore Our Services
-                </a>
-            </div>
-        </section>
+    <!-- Hero -->
+    <section id="hero" class="container text-center mb-24 pt-16">
+      <h1 class="text-5xl md:text-7xl font-extrabold text-[#ff5733] mb-4 drop-shadow-lg">AxiomTech</h1>
+      <p class="text-xl md:text-2xl text-gray-300 mb-8">We provide advanced technological solutions to boost your business growth.</p>
+      <a href="#services" class="inline-block px-10 py-5 bg-[#ff5733] text-white font-bold rounded-full shadow-lg hover:bg-[#ff7f50] hover:scale-105 transition">Explore Our Services</a>
+    </section>
 
-        <!-- Services Section -->
-        <section id="services" class="container mb-24">
-            <h2 class="text-4xl font-bold text-center text-white mb-12 section-title">Our Services</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-[#24244a] p-8 rounded-3xl shadow-xl transition-transform transform hover:scale-105 duration-300">
-                    <div class="text-5xl text-[#ff5733] mb-4 text-center">💻</div>
-                    <h3 class="text-2xl font-semibold mb-2 text-white text-center">Web Development</h3>
-                    <p class="text-gray-400 text-center">Designing and developing modern, responsive websites and web applications with the latest technologies.</p>
-                </div>
-                <!-- Service 2 -->
-                <div class="bg-[#24244a] p-8 rounded-3xl shadow-xl transition-transform transform hover:scale-105 duration-300">
-                    <div class="text-5xl text-[#ff5733] mb-4 text-center">📱</div>
-                    <h3 class="text-2xl font-semibold mb-2 text-white text-center">Mobile Applications</h3>
-                    <p class="text-gray-400 text-center">Building native and hybrid applications for iOS and Android platforms.</p>
-                </div>
-                <!-- Service 3 -->
-                <div class="bg-[#24244a] p-8 rounded-3xl shadow-xl transition-transform transform hover:scale-105 duration-300">
-                    <div class="text-5xl text-[#ff5733] mb-4 text-center">📊</div>
-                    <h3 class="text-2xl font-semibold mb-2 text-white text-center">Business Solutions</h3>
-                    <p class="text-gray-400 text-center">Providing customized software solutions for business management and data analysis.</p>
-                </div>
-            </div>
-        </section>
+    <!-- Services -->
+    <section id="services" class="container mb-24">
+      <h2 class="text-4xl font-bold text-center text-white mb-12 relative section-title">Our Services</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-[#24244a] p-8 rounded-3xl shadow-xl hover:scale-105 transition"><h3 class="text-2xl text-center mb-2">💻 Web Development</h3><p class="text-gray-400 text-center">Responsive websites & web apps with modern tech.</p></div>
+        <div class="bg-[#24244a] p-8 rounded-3xl shadow-xl hover:scale-105 transition"><h3 class="text-2xl text-center mb-2">📱 Mobile Apps</h3><p class="text-gray-400 text-center">Native and hybrid apps for iOS & Android.</p></div>
+        <div class="bg-[#24244a] p-8 rounded-3xl shadow-xl hover:scale-105 transition"><h3 class="text-2xl text-center mb-2">📊 Business Solutions</h3><p class="text-gray-400 text-center">Custom solutions for business growth.</p></div>
+      </div>
+    </section>
 
-        <!-- Portfolio Section -->
-        <section id="portfolio" class="container mb-24">
-            <h2 class="text-4xl font-bold text-center text-white mb-12 section-title">Our Portfolio</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="bg-[#24244a] p-6 rounded-3xl shadow-lg transition-transform transform hover:scale-105 duration-300">
-                    <img src="https://placehold.co/600x400/3A3A3A/E0E0E0?text=Project+1" alt="Project 1" class="w-full h-48 object-cover rounded-2xl mb-4">
-                    <h3 class="text-2xl font-semibold text-white mb-1">Task Management App</h3>
-                    <p class="text-gray-400">A web application that helps teams organize and manage projects efficiently.</p>
-                </div>
-                <!-- Project 2 -->
-                <div class="bg-[#24244a] p-6 rounded-3xl shadow-lg transition-transform transform hover:scale-105 duration-300">
-                    <img src="https://placehold.co/600x400/3A3A3A/E0E0E0?text=Project+2" alt="Project 2" class="w-full h-48 object-cover rounded-2xl mb-4">
-                    <h3 class="text-2xl font-semibold text-white mb-1">E-commerce Platform</h3>
-                    <p class="text-gray-400">Designing and developing an online store for selling digital products.</p>
-                </div>
-                <!-- Project 3 -->
-                <div class="bg-[#24244a] p-6 rounded-3xl shadow-lg transition-transform transform hover:scale-105 duration-300">
-                    <img src="https://placehold.co/600x400/3A3A3A/E0E0E0?text=Project+3" alt="Project 3" class="w-full h-48 object-cover rounded-2xl mb-4">
-                    <h3 class="text-2xl font-semibold text-white mb-1">Content Management System (CMS)</h3>
-                    <p class="text-gray-400">Building a custom system to manage website and blog content.</p>
-                </div>
-            </div>
-        </section>
+    <!-- Join Our Team -->
+    <section id="join-us" class="container text-center mb-24">
+      <h2 class="text-4xl font-bold text-[#ff5733] mb-4 relative section-title">Join the AxiomTech Team</h2>
+      <form class="contact-form space-y-6 bg-[#24244a] p-10 rounded-3xl shadow-xl max-w-2xl mx-auto" data-form>
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="#">
+        <input type="text" name="Full Name" placeholder="Your Name" required class="w-full p-3 rounded-xl bg-[#1a1a2e] border border-[#ff5733] text-white">
+        <input type="email" name="Email" placeholder="Your Email" required class="w-full p-3 rounded-xl bg-[#1a1a2e] border border-[#ff5733] text-white">
+        <textarea name="Message" placeholder="Tell us about your skills..." required class="w-full p-3 rounded-xl bg-[#1a1a2e] border border-[#ff5733] text-white"></textarea>
+        <button type="submit" class="px-10 py-4 bg-[#ff5733] text-white font-bold rounded-full hover:bg-[#ff7f50] hover:scale-105 transition">Submit</button>
+      </form>
+    </section>
 
-        <!-- About Us Section -->
-        <section id="about" class="container mb-24">
-            <h2 class="text-4xl font-bold text-center text-white mb-12 section-title">About Us</h2>
-            <div class="flex flex-col md:flex-row items-center gap-12 bg-[#24244a] p-10 rounded-3xl shadow-xl">
-                <div class="md:w-1/2">
-                    <img src="https://placehold.co/600x400/3A3A3A/E0E0E0?text=Our+Team" alt="Our team working" class="rounded-2xl shadow-lg w-full">
-                </div>
-                <div class="md:w-1/2 text-gray-300 text-lg leading-relaxed">
-                    <p class="mb-4">
-                        We are AxiomTech, a team of talented developers and designers dedicated to providing innovative tech solutions. We believe technology is the tool that can transform ideas into real achievements.
-                    </p>
-                    <p>
-                        We work with passion and precision to deliver the highest quality, and we build long-term relationships with our clients to ensure the success of their projects.
-                    </p>
-                </div>
-            </div>
-        </section>
+    <!-- Contact -->
+    <section id="contact" class="container">
+      <h2 class="text-4xl font-bold text-center text-white mb-12 relative section-title">Contact Us</h2>
+      <form class="contact-form space-y-6 bg-[#24244a] p-10 rounded-3xl shadow-xl max-w-2xl mx-auto" data-form>
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="#">
+        <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded-xl bg-[#1a1a2e] border border-[#ff5733] text-white">
+        <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded-xl bg-[#1a1a2e] border border-[#ff5733] text-white">
+        <textarea name="message" placeholder="Your Message" required class="w-full p-3 rounded-xl bg-[#1a1a2e] border border-[#ff5733] text-white"></textarea>
+        <button type="submit" class="px-10 py-4 bg-[#ff5733] text-white font-bold rounded-full hover:bg-[#ff7f50] hover:scale-105 transition">Send</button>
+      </form>
+    </section>
 
-        <!-- Join Us Section -->
-        <section id="join-us" class="container text-center mb-24">
-            <h2 class="text-4xl md:text-5xl font-extrabold text-[#ff5733] mb-4 section-title">Join the AxiomTech Team</h2>
-            <p class="text-lg md:text-xl text-gray-300 mb-12">We are always looking for passionate and creative talent. Fill out the form below to submit your application.</p>
+  </main>
 
-            <!-- Formspree is now configured for this form -->
-            <form id="application-form" action="https://formspree.io/f/f/boujeddaienfarid@gmail.com" method="POST" class="space-y-8 bg-[#24244a] p-10 rounded-3xl shadow-xl max-w-2xl mx-auto">
-                <div>
-                    <label for="full-name" class="block text-gray-300 text-lg font-semibold mb-2 text-left">Full Name</label>
-                    <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required
-                           class="w-full px-5 py-3 bg-[#1a1a2e] border border-[#ff5733] rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#ff5733] transition-colors duration-300">
-                </div>
-                <div>
-                    <label for="email" class="block text-gray-300 text-lg font-semibold mb-2 text-left">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email address" required
-                           class="w-full px-5 py-3 bg-[#1a1a2e] border border-[#ff5733] rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#ff5733] transition-colors duration-300">
-                </div>
-                <div>
-                    <label for="job-title" class="block text-gray-300 text-lg font-semibold mb-2 text-left">Desired Job Title</label>
-                    <input type="text" id="job-title" name="job-title" placeholder="e.g., Web Developer, UX Designer" required
-                           class="w-full px-5 py-3 bg-[#1a1a2e] border border-[#ff5733] rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#ff5733] transition-colors duration-300">
-                </div>
-                <!-- Skills Section -->
-                <div class="text-left">
-                    <label class="block text-gray-300 text-lg font-semibold mb-4">What are your main skills?</label>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-left">
-                        <label class="flex items-center text-gray-400">
-                            <input type="checkbox" name="skills" value="HTML/CSS" class="form-checkbox h-5 w-5 text-[#ff5733] bg-[#1a1a2e] rounded-md border-gray-600 focus:ring-[#ff5733]">
-                            <span class="ml-2">HTML/CSS</span>
-                        </label>
-                        <label class="flex items-center text-gray-400">
-                            <input type="checkbox" name="skills" value="JavaScript" class="form-checkbox h-5 w-5 text-[#ff5733] bg-[#1a1a2e] rounded-md border-gray-600 focus:ring-[#ff5733]">
-                            <span class="ml-2">JavaScript</span>
-                        </label>
-                        <label class="flex items-center text-gray-400">
-                            <input type="checkbox" name="skills" value="Python" class="form-checkbox h-5 w-5 text-[#ff5733] bg-[#1a1a2e] rounded-md border-gray-600 focus:ring-[#ff5733]">
-                            <span class="ml-2">Python</span>
-                        </label>
-                        <label class="flex items-center text-gray-400">
-                            <input type="checkbox" name="skills" value="React/Vue" class="form-checkbox h-5 w-5 text-[#ff5733] bg-[#1a1a2e] rounded-md border-gray-600 focus:ring-[#ff5733]">
-                            <span class="ml-2">React/Vue</span>
-                        </label>
-                        <label class="flex items-center text-gray-400">
-                            <input type="checkbox" name="skills" value="SQL" class="form-checkbox h-5 w-5 text-[#ff5733] bg-[#1a1a2e] rounded-md border-gray-600 focus:ring-[#ff5733]">
-                            <span class="ml-2">SQL</span>
-                        </label>
-                        <label class="flex items-center text-gray-400">
-                            <input type="checkbox" name="skills" value="UI/UX Design" class="form-checkbox h-5 w-5 text-[#ff5733] bg-[#1a1a2e] rounded-md border-gray-600 focus:ring-[#ff5733]">
-                            <span class="ml-2">UI/UX Design</span>
-                        </label>
-                    </div>
-                </div>
+  <!-- Popup Message -->
+  <div id="popup" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-[#24244a] p-8 rounded-3xl shadow-xl text-center max-w-sm">
+      <h3 class="text-2xl font-bold text-white mb-2">✅ Message Sent</h3>
+      <p class="text-gray-300">Thank you! Your message has been delivered successfully.</p>
+      <button onclick="document.getElementById('popup').classList.add('hidden')" class="mt-4 px-6 py-2 bg-[#ff5733] text-white rounded-full hover:bg-[#ff7f50]">Close</button>
+    </div>
+  </div>
 
-                <!-- Warehouses Section -->
-                <div class="text-left">
-                    <label class="block text-gray-300 text-lg font-semibold mb-4">Do you have experience with repositories?</label>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-left">
-                        <label class="flex items-center text-gray-400">
-                            <input type="checkbox" name="warehouses" value="GitHub" class="form-checkbox h-5 w-5 text-[#ff5733] bg-[#1a1a2e] rounded-md border-gray-600 focus:ring-[#ff5733]">
-                            <span class="ml-2">GitHub</span>
-                        </label>
-                        <label class="flex items-center text-gray-400">
-                            <input type="checkbox" name="warehouses" value="GitLab" class="form-checkbox h-5 w-5 text-[#ff5733] bg-[#1a1a2e] rounded-md border-gray-600 focus:ring-[#ff5733]">
-                            <span class="ml-2">GitLab</span>
-                        </label>
-                        <label class="flex items-center text-gray-400">
-                            <input type="checkbox" name="warehouses" value="Bitbucket" class="form-checkbox h-5 w-5 text-[#ff5733] bg-[#1a1a2e] rounded-md border-gray-600 focus:ring-[#ff5733]">
-                            <span class="ml-2">Bitbucket</span>
-                        </label>
-                    </div>
-                </div>
-                
-                <!-- CV Upload - Note: Formspree requires a paid plan to handle file uploads. This is a placeholder. -->
-                <div>
-                    <label for="cv-file" class="block text-gray-300 text-lg font-semibold mb-2 text-left">Resume/CV</label>
-                    <p class="text-gray-400 text-sm mb-2 text-left">Note: Formspree requires a paid plan for file uploads. You can mention in the message you've attached your resume.</p>
-                    <input type="file" id="cv-file" name="cv-file" accept=".pdf,.doc,.docx"
-                           class="w-full px-5 py-3 bg-[#1a1a2e] border border-[#ff5733] rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#ff5733] transition-colors duration-300">
-                </div>
+  <footer class="bg-[#24244a] text-center text-gray-500 py-6 px-4 mt-16 rounded-t-3xl">
+    <p>&copy; 2025 AxiomTech. All rights reserved.</p>
+  </footer>
 
-                <div class="text-center">
-                    <button type="submit"
-                            class="w-full md:w-auto px-10 py-4 bg-[#ff5733] text-white font-bold rounded-full shadow-lg hover:bg-[#ff7f50] transition-colors duration-300 transform hover:scale-105">
-                        Submit Application
-                    </button>
-                </div>
-            </form>
-            <!-- Message Box for Alert -->
-            <div id="message-box" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 hidden">
-                <div class="bg-gray-800 p-8 rounded-2xl shadow-xl max-w-sm w-full text-center border-2 border-[#ff5733]">
-                    <h3 class="text-2xl font-bold text-white mb-4">Thank You!</h3>
-                    <p class="text-gray-300">Your application has been sent successfully. We will review it and get back to you soon.</p>
-                    <button id="close-message-box" class="mt-6 px-6 py-2 bg-[#ff5733] text-white rounded-full hover:bg-[#ff7f50] transition-colors">Close</button>
-                </div>
-            </div>
-        </section>
+  <script>
+    document.querySelectorAll("[data-form]").forEach(form => {
+      form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        fetch("https://formsubmit.co/ajax/farisxboujddain@gmail.com", {
+          method: "POST",
+          body: new FormData(form)
+        }).then(() => {
+          form.reset();
+          document.getElementById("popup").classList.remove("hidden");
+        }).catch(() => alert("Error sending message."));
+      });
+    });
+  </script>
 
-        <!-- Contact Section -->
-        <section id="contact" class="container">
-            <h2 class="text-4xl font-bold text-center text-white mb-12 section-title">Contact Us</h2>
-            
-            <!-- Formspree is now configured for this form -->
-            <form id="contact-form" action="https://formspree.io/f/boujeddaienfarid@gmail.com" method="POST" class="space-y-6 bg-[#24244a] p-10 rounded-3xl shadow-xl">
-                <div>
-                    <label for="name-contact" class="block text-gray-300 text-lg font-semibold mb-2">Full Name</label>
-                    <input type="text" id="name-contact" name="name" placeholder="Enter your full name" required
-                           class="w-full px-5 py-3 bg-[#1a1a2e] border border-[#ff5733] rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#ff5733] transition-colors duration-300">
-                </div>
-                <div>
-                    <label for="email-contact" class="block text-gray-300 text-lg font-semibold mb-2">Email Address</label>
-                    <input type="email" id="email-contact" name="email" placeholder="Enter your email address" required
-                           class="w-full px-5 py-3 bg-[#1a1a2e] border border-[#ff5733] rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#ff5733] transition-colors duration-300">
-                </div>
-                <div>
-                    <label for="message-contact" class="block text-gray-300 text-lg font-semibold mb-2">Your Message</label>
-                    <textarea id="message-contact" name="message" rows="5" placeholder="Write your message here..." required
-                              class="w-full px-5 py-3 bg-[#1a1a2e] border border-[#ff5733] rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#ff5733] transition-colors duration-300"></textarea>
-                </div>
-                <div class="text-center">
-                    <button type="submit"
-                            class="w-full md:w-auto px-10 py-4 bg-[#ff5733] text-white font-bold rounded-full shadow-lg hover:bg-[#ff7f50] transition-colors duration-300 transform hover:scale-105">
-                        Send Message
-                    </button>
-                </div>
-            </form>
-            <!-- Message Box for Alert -->
-            <div id="message-box-contact" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 hidden">
-                <div class="bg-gray-800 p-8 rounded-2xl shadow-xl max-w-sm w-full text-center border-2 border-[#ff5733]">
-                    <h3 class="text-2xl font-bold text-white mb-4">Thank You!</h3>
-                    <p class="text-gray-300">Your message has been sent successfully. We will get back to you soon.</p>
-                    <button id="close-message-box-contact" class="mt-6 px-6 py-2 bg-[#ff5733] text-white rounded-full hover:bg-[#ff7f50] transition-colors">Close</button>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer Section -->
-    <footer class="bg-[#24244a] text-center text-gray-500 py-6 px-4 mt-16 rounded-t-3xl">
-        <p>&copy; 2025 AxiomTech. All rights reserved.</p>
-    </footer>
-
-    <script>
-        // The JavaScript part to show success message will still work
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            // Prevent default HTML form submission, as Formspree will handle it asynchronously
-            // event.preventDefault(); 
-        });
-
-        document.getElementById('application-form').addEventListener('submit', function(event) {
-            // event.preventDefault(); 
-        });
-    </script>
 </body>
 </html>
-
-                                                                                                                                                                                          

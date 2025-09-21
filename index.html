@@ -326,6 +326,23 @@
                 font-size: 1rem;
             }
         }
+
+        /* Loading Spinner */
+        .spinner {
+            display: none;
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top: 4px solid var(--secondary-color);
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
@@ -433,22 +450,27 @@
                 <div class="success-message" id="service-success">
                     شكراً لك! تم استلام طلبك بنجاح وسنتواصل معك قريباً.
                 </div>
-                <form id="service-form">
+                <form id="service-form" action="https://formsubmit.co/boujeddaienfarid@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="طلب خدمة جديد من موقع AXIOMTECH">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+                    <input type="hidden" name="_captcha" value="false">
+                    
                     <div class="form-group">
                         <label for="name">الاسم الكامل</label>
-                        <input type="text" id="name" class="form-control" required>
+                        <input type="text" id="name" name="name" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="email">البريد الإلكتروني</label>
-                        <input type="email" id="email" class="form-control" required>
+                        <input type="email" id="email" name="email" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="phone">رقم الهاتف</label>
-                        <input type="tel" id="phone" class="form-control" required>
+                        <input type="tel" id="phone" name="phone" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="service-type">نوع الخدمة المطلوبة</label>
-                        <select id="service-type" class="form-control" required>
+                        <select id="service-type" name="service-type" class="form-control" required>
                             <option value="">اختر الخدمة</option>
                             <option value="استشارة">استشارة في التجارة الإلكترونية</option>
                             <option value="استراتيجية">تطوير استراتيجية متكاملة</option>
@@ -459,9 +481,10 @@
                     </div>
                     <div class="form-group">
                         <label for="message">الوصف المفصل للطلب</label>
-                        <textarea id="message" class="form-control" required></textarea>
+                        <textarea id="message" name="message" class="form-control" required></textarea>
                     </div>
                     <button type="submit" class="btn">إرسال الطلب</button>
+                    <div class="spinner" id="service-spinner"></div>
                 </form>
             </div>
         </div>
@@ -475,26 +498,31 @@
                 <div class="success-message" id="join-success">
                     شكراً لك! تم استلام طلب الانضمام بنجاح وسنتواصل معك قريباً.
                 </div>
-                <form id="join-form">
+                <form id="join-form" action="https://formsubmit.co/boujeddaienfarid@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="طلب انضمام جديد إلى AXIOMTECH">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+                    <input type="hidden" name="_captcha" value="false">
+                    
                     <div class="form-group">
                         <label for="join-name">الاسم الكامل</label>
-                        <input type="text" id="join-name" class="form-control" required>
+                        <input type="text" id="join-name" name="name" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="join-email">البريد الإلكتروني</label>
-                        <input type="email" id="join-email" class="form-control" required>
+                        <input type="email" id="join-email" name="email" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="join-phone">رقم الهاتف</label>
-                        <input type="tel" id="join-phone" class="form-control" required>
+                        <input type="tel" id="join-phone" name="phone" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="skills">المهارات والخبرات</label>
-                        <textarea id="skills" class="form-control" required></textarea>
+                        <textarea id="skills" name="skills" class="form-control" required></textarea>
                     </div>
                     <div class="form-group">
                         <label for="position">المجال الذي ترغب بالعمل فيه</label>
-                        <select id="position" class="form-control" required>
+                        <select id="position" name="position" class="form-control" required>
                             <option value="">اختر المجال</option>
                             <option value="تطوير">تطوير الويب</option>
                             <option value="تصميم">تصميم UI/UX</option>
@@ -504,6 +532,7 @@
                         </select>
                     </div>
                     <button type="submit" class="btn">إرسال طلب الانضمام</button>
+                    <div class="spinner" id="join-spinner"></div>
                 </form>
             </div>
         </div>
@@ -540,36 +569,5 @@
     </footer>
 
     <script>
-        // إدارة إرسال النماذج
-        document.addEventListener('DOMContentLoaded', function() {
-            // نموذج طلب الخدمة
-            const serviceForm = document.getElementById('service-form');
-            const serviceSuccess = document.getElementById('service-success');
-            
-            serviceForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // جمع بيانات النموذج
-                const formData = {
-                    name: document.getElementById('name').value,
-                    email: document.getElementById('email').value,
-                    phone: document.getElementById('phone').value,
-                    service: document.getElementById('service-type').value,
-                    message: document.getElementById('message').value,
-                    type: 'طلب خدمة'
-                };
-                
-                // إرسال البيانات عبر EmailJS
-                emailjs.send('service_your_service_id', 'template_your_template_id', formData)
-                    .then(function(response) {
-                        console.log('SUCCESS!', response.status, response.text);
-                        serviceSuccess.style.display = 'block';
-                        serviceForm.reset();
-                        
-                        // إخفاء الرسالة بعد 5 ثوان
-                        setTimeout(() => {
-                            serviceSuccess.style.display = 'none';
-                        }, 5000);
-                    }, function(error) {
-                        console.log('FAILED...', error);
-                        alert('عذراً، حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى.');
+        // إدارة إرسال النماذج وعرض رسائل النجاح
+        d

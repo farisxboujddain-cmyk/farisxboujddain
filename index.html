@@ -1,52 +1,70 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AXIOMTECH - حلول تكنولوجية مبتكرة</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <title>AXIOMTECH - Innovative Technology Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            font-family: 'Tajawal', sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: #0d1222;
             color: #e2e8f0;
             line-height: 1.6;
         }
         .header-bg {
-            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://placehold.co/1920x1080/0d1222/e2e8f0?text=AXIOMTECH');
+            background: linear-gradient(rgba(13, 18, 34, 0.9), rgba(13, 18, 34, 0.9)), url('https://placehold.co/1920x1080/0d1222/e2e8f0?text=AXIOMTECH');
             background-size: cover;
             background-position: center;
         }
         .nav-link {
             transition: color 0.3s, transform 0.3s;
+            position: relative;
         }
         .nav-link:hover {
-            color: #63b3ed;
-            transform: scale(1.1);
+            color: #4c51bf;
+            transform: translateY(-2px);
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #4c51bf;
+            transition: width 0.3s ease-in-out;
+        }
+        .nav-link:hover::after {
+            width: 100%;
         }
         .section-title {
             position: relative;
             padding-bottom: 0.5rem;
+            color: #fff;
         }
         .section-title::after {
             content: '';
             position: absolute;
             bottom: 0;
-            right: 50%;
-            transform: translateX(50%);
+            left: 50%;
+            transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background-color: #63b3ed;
+            background-color: #4c51bf;
             border-radius: 2px;
         }
         .card {
+            background: #1a202c;
             transition: transform 0.3s, box-shadow 0.3s;
-            background-color: #1a202c;
+            border-radius: 1rem;
+            border: 1px solid rgba(76, 81, 191, 0.2);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
         }
         .btn {
             background-color: #4c51bf;
@@ -54,152 +72,188 @@
         }
         .btn:hover {
             background-color: #5a67d8;
-            transform: scale(1.05);
+            transform: scale(1.02);
         }
-        .message-box {
+        .btn-secondary {
+            background-color: #2d3748;
+            transition: background-color 0.3s;
+        }
+        .btn-secondary:hover {
+            background-color: #4a5568;
+        }
+        .modal {
             display: none;
             position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #4a5568;
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             z-index: 1000;
-            text-align: center;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s;
         }
-        .message-box button {
-            margin-top: 10px;
-            background-color: #63b3ed;
-            color: white;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 5px;
+        .modal-content {
+            background-color: #2d3748;
+            margin: 15% auto;
+            padding: 40px;
+            border: 1px solid #4c51bf;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 1rem;
+            text-align: center;
+            position: relative;
+            animation: slideIn 0.5s;
+        }
+        .close-btn {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 28px;
+            font-weight: bold;
             cursor: pointer;
         }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
     </style>
+    <!-- Phosphor Icons for professional icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.0.3/dist/phosphor.js"></script>
 </head>
 <body>
 
     <!-- Header & Navigation -->
-    <header class="header-bg py-8 md:py-16 text-center text-white">
+    <header id="home" class="header-bg py-8 md:py-16 text-center text-white">
         <nav class="container mx-auto px-4 flex justify-between items-center mb-10">
-            <a href="#" class="text-2xl md:text-3xl font-bold tracking-wide">AXIOMTECH</a>
+            <a href="#" class="text-3xl md:text-4xl font-bold tracking-wide text-[#4c51bf]">AXIOMTECH</a>
             <ul class="flex space-x-4 md:space-x-8">
-                <li><a href="#home" class="nav-link">الرئيسية</a></li>
-                <li><a href="#services" class="nav-link">خدماتنا</a></li>
-                <li><a href="#join" class="nav-link">انضم إلينا</a></li>
+                <li><a href="#home" class="nav-link font-medium text-lg">Home</a></li>
+                <li><a href="#services" class="nav-link font-medium text-lg">Services</a></li>
+                <li><a href="#join" class="nav-link font-medium text-lg">Join Us</a></li>
             </ul>
         </nav>
         <div class="container mx-auto px-4 mt-16 md:mt-32">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">نحن نبني مستقبل التكنولوجيا</h1>
-            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8">حلول تكنولوجية مبتكرة لشركاتك الناشئة و الكبيرة</p>
-            <a href="#services" class="btn text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl">استكشف خدماتنا</a>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 animate-fadeIn">We Build the Digital Future</h1>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 animate-fadeIn animate-delay-300">Innovative technology solutions for startups and large enterprises</p>
+            <a href="#services" class="btn text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl animate-bounce">Explore Our Services</a>
         </div>
     </header>
 
     <!-- Services Section -->
-    <section id="services" class="py-16 md:py-24 bg-gray-900">
+    <section id="services" class="py-16 md:py-24 bg-[#0a0f1d]">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title mx-auto w-fit">خدماتنا التجارية</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title mx-auto w-fit">Our Business Services</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Service Card 1 -->
+                <!-- Service Card 1: Reports -->
                 <div class="card p-6 rounded-lg">
-                    <span class="text-6xl mb-4 block">📊</span>
-                    <h3 class="text-xl font-bold mb-2">تحليل التقارير</h3>
-                    <p class="text-gray-400">نقدم تحليلات دقيقة وشاملة لبيانات شركتك، مما يتيح لك اتخاذ قرارات مدروسة قائمة على حقائق.</p>
+                    <div class="text-6xl mb-4 text-[#63b3ed]">
+                         <i class="ph-file-magnifying-glass-duotone"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Reports Analysis</h3>
+                    <p class="text-gray-400">We provide accurate and comprehensive analysis of your company's data, allowing you to make well-informed, fact-based decisions.</p>
                 </div>
-                <!-- Service Card 2 -->
+                <!-- Service Card 2: Branding -->
                 <div class="card p-6 rounded-lg">
-                    <span class="text-6xl mb-4 block">🎨</span>
-                    <h3 class="text-xl font-bold mb-2">تصميم شعار وعلامة تجارية</h3>
-                    <p class="text-gray-400">نحول فكرتك إلى هوية بصرية فريدة تعكس قيم شركتك وتبرزها في السوق.</p>
+                    <div class="text-6xl mb-4 text-[#63b3ed]">
+                        <i class="ph-palette-duotone"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Logo & Brand Identity Design</h3>
+                    <p class="text-gray-400">We transform your idea into a unique visual identity that reflects your company's values and stands out in the market.</p>
                 </div>
-                <!-- Service Card 3 -->
+                <!-- Service Card 3: Marketing -->
                 <div class="card p-6 rounded-lg">
-                    <span class="text-6xl mb-4 block">📈</span>
-                    <h3 class="text-xl font-bold mb-2">استراتيجيات التسويق</h3>
-                    <p class="text-gray-400">نخطط وننفذ حملات تسويقية رقمية مبتكرة لزيادة وصولك لجمهورك المستهدف وتحقيق مبيعات قياسية.</p>
+                    <div class="text-6xl mb-4 text-[#63b3ed]">
+                        <i class="ph-chart-line-duotone"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Marketing Strategies</h3>
+                    <p class="text-gray-400">We plan and execute innovative digital marketing campaigns to increase your reach to the target audience and achieve record sales.</p>
                 </div>
-                <!-- Service Card 4 -->
+                <!-- Service Card 4: Business Solutions -->
                 <div class="card p-6 rounded-lg">
-                    <span class="text-6xl mb-4 block">💼</span>
-                    <h3 class="text-xl font-bold mb-2">أعمال تجارية متكاملة</h3>
-                    <p class="text-gray-400">نقدم حلولاً شاملة لتطوير أعمالك، من التخطيط الأولي حتى التنفيذ والدعم المستمر.</p>
+                    <div class="text-6xl mb-4 text-[#63b3ed]">
+                        <i class="ph-lightbulb-duotone"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Integrated Business Solutions</h3>
+                    <p class="text-gray-400">We offer comprehensive solutions to develop your business, from initial planning to implementation and ongoing support.</p>
                 </div>
             </div>
 
             <!-- Contact Form for Business Services -->
-            <div class="mt-16 bg-gray-800 p-8 rounded-lg max-w-2xl mx-auto text-right">
-                <h3 class="text-2xl font-bold mb-4 text-center">اطلب خدماتنا</h3>
+            <div class="mt-16 bg-[#1a202c] p-8 rounded-lg max-w-2xl mx-auto text-left border border-gray-700">
+                <h3 class="text-2xl font-bold mb-4 text-center">Request Our Services</h3>
                 <form id="serviceForm" action="https://formspree.io/f/farisxboujddain@gmail.com" method="POST" class="space-y-4">
                     <div>
-                        <label for="service_name" class="block text-sm font-medium mb-1">اسمك الكامل</label>
-                        <input type="text" id="service_name" name="الاسم" required
+                        <label for="service_name" class="block text-sm font-medium mb-1">Full Name</label>
+                        <input type="text" id="service_name" name="Name" required
                                class="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                     </div>
                     <div>
-                        <label for="service_email" class="block text-sm font-medium mb-1">بريدك الإلكتروني</label>
-                        <input type="email" id="service_email" name="البريد الإلكتروني" required
+                        <label for="service_email" class="block text-sm font-medium mb-1">Email Address</label>
+                        <input type="email" id="service_email" name="Email" required
                                class="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                     </div>
                     <div>
-                        <label for="service_type" class="block text-sm font-medium mb-1">نوع الخدمة المطلوبة</label>
-                        <select id="service_type" name="نوع_الخدمة" required
+                        <label for="service_type" class="block text-sm font-medium mb-1">Requested Service Type</label>
+                        <select id="service_type" name="Service Type" required
                                 class="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                            <option value="">-- اختر خدمة --</option>
-                            <option value="تحليل تقارير">تحليل تقارير</option>
-                            <option value="تصميم شعار">تصميم شعار وعلامة تجارية</option>
-                            <option value="استراتيجيات تسويق">استراتيجيات تسويق</option>
-                            <option value="أعمال تجارية متكاملة">أعمال تجارية متكاملة</option>
-                            <option value="أخرى">أخرى</option>
+                            <option value="">-- Select a Service --</option>
+                            <option value="Reports Analysis">Reports Analysis</option>
+                            <option value="Branding Design">Logo & Brand Identity Design</option>
+                            <option value="Marketing Strategies">Marketing Strategies</option>
+                            <option value="Business Solutions">Integrated Business Solutions</option>
+                            <option value="Other">Other</option>
                         </select>
                     </div>
                     <div>
-                        <label for="service_details" class="block text-sm font-medium mb-1">تفاصيل طلبك</label>
-                        <textarea id="service_details" name="تفاصيل_الطلب" rows="5" placeholder="اذكر هنا التفاصيل التي تريدها" required
+                        <label for="service_details" class="block text-sm font-medium mb-1">Request Details</label>
+                        <textarea id="service_details" name="Request Details" rows="5" placeholder="Please provide details of your request here..." required
                                   class="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
                     </div>
-                    <button type="submit" class="btn text-white font-bold py-2 px-6 rounded-md w-full">إرسال الطلب</button>
+                    <button type="submit" class="btn text-white font-bold py-2 px-6 rounded-md w-full">Submit Request</button>
                 </form>
             </div>
         </div>
     </section>
 
     <!-- Join Us Section -->
-    <section id="join" class="py-16 md:py-24 bg-gray-900">
+    <section id="join" class="py-16 md:py-24 bg-[#0d1222]">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title mx-auto w-fit">انضم إلى عائلة AXIOMTECH</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title mx-auto w-fit">Join the AXIOMTECH Family</h2>
             <p class="max-w-3xl mx-auto text-gray-400 mb-8">
-                نحن نبحث دائمًا عن المواهب المبدعة للانضمام إلى فريقنا. إذا كنت شغوفًا بالتكنولوجيا ولديك مهارات قوية في مجالات مثل **البرمجة، تصميم الجرافيك، أو التسويق الرقمي**، فلا تتردد في الانضمام.
+                We are always looking for creative talents to join our team. If you are passionate about technology and have strong skills in areas like **programming, graphic design, or digital marketing**, do not hesitate to apply.
             </p>
-            <a href="https://github.com/your_github_org_link" class="btn text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl mb-8" target="_blank">
-                <img src="https://img.icons8.com/color/48/github--v1.png" alt="Github" class="inline-block w-6 h-6 ml-2">
-                قم بزيارة صفحتنا على Github
+            <a href="https://github.com/your_github_org_link" class="btn-secondary text-white font-bold py-3 px-8 rounded-full shadow-lg mb-8" target="_blank">
+                <i class="ph-github-logo-duotone text-xl inline-block mr-2"></i>
+                Visit Our Github Page
             </a>
 
             <!-- Job Application Form -->
-            <div class="mt-16 bg-gray-800 p-8 rounded-lg max-w-2xl mx-auto text-right">
-                <h3 class="text-2xl font-bold mb-4 text-center">قدم طلبك الآن</h3>
+            <div class="mt-16 bg-[#1a202c] p-8 rounded-lg max-w-2xl mx-auto text-left border border-gray-700">
+                <h3 class="text-2xl font-bold mb-4 text-center">Apply Now</h3>
                 <form id="jobForm" action="https://formspree.io/f/farisxboujddain@gmail.com" method="POST" class="space-y-4">
                     <div>
-                        <label for="job_name" class="block text-sm font-medium mb-1">الاسم الكامل</label>
-                        <input type="text" id="job_name" name="الاسم" required
+                        <label for="job_name" class="block text-sm font-medium mb-1">Full Name</label>
+                        <input type="text" id="job_name" name="Name" required
                                class="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                     </div>
                     <div>
-                        <label for="job_email" class="block text-sm font-medium mb-1">بريدك الإلكتروني</label>
-                        <input type="email" id="job_email" name="البريد الإلكتروني" required
+                        <label for="job_email" class="block text-sm font-medium mb-1">Email Address</label>
+                        <input type="email" id="job_email" name="Email" required
                                class="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                     </div>
                     <div>
-                        <label for="job_skills" class="block text-sm font-medium mb-1">مهاراتك</label>
-                        <textarea id="job_skills" name="المهارات" rows="5" placeholder="اذكر مهاراتك الرئيسية وما تجيده (مثال: تطوير الويب, تصميم الجرافيك, التسويق الرقمي)" required
+                        <label for="job_skills" class="block text-sm font-medium mb-1">Your Skills</label>
+                        <textarea id="job_skills" name="Skills" rows="5" placeholder="List your key skills (e.g., Web Development, Graphic Design, Digital Marketing)" required
                                   class="w-full p-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
                     </div>
-                    <button type="submit" class="btn text-white font-bold py-2 px-6 rounded-md w-full">إرسال الطلب</button>
+                    <button type="submit" class="btn text-white font-bold py-2 px-6 rounded-md w-full">Submit Application</button>
                 </form>
             </div>
         </div>
@@ -207,66 +261,83 @@
 
     <!-- Footer -->
     <footer class="bg-gray-800 py-6 text-center text-gray-400">
-        <p>&copy; 2024 AXIOMTECH. جميع الحقوق محفوظة.</p>
+        <p>&copy; 2024 AXIOMTECH. All Rights Reserved.</p>
     </footer>
 
-    <!-- Message Box -->
-    <div id="messageBox" class="message-box">
-        <p id="messageText"></p>
-        <button onclick="document.getElementById('messageBox').style.display='none';">إغلاق</button>
+    <!-- Success/Error Modal -->
+    <div id="statusModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modalContent"></div>
+        </div>
     </div>
 
     <script>
-        const messageBox = document.getElementById('messageBox');
-        const messageText = document.getElementById('messageText');
+        document.addEventListener('DOMContentLoaded', () => {
+            const serviceForm = document.getElementById('serviceForm');
+            const jobForm = document.getElementById('jobForm');
+            const modal = document.getElementById('statusModal');
+            const modalContent = document.getElementById('modalContent');
+            const closeBtn = document.querySelector('.close-btn');
 
-        // دالة لعرض رسالة للمستخدم
-        function showMessage(message, isSuccess) {
-            messageText.textContent = message;
-            messageBox.style.display = 'block';
-            if (isSuccess) {
-                messageBox.style.backgroundColor = '#48bb78'; // لون أخضر للنجاح
-            } else {
-                messageBox.style.backgroundColor = '#f56565'; // لون أحمر للفشل
+            closeBtn.onclick = () => {
+                modal.style.display = 'none';
             }
-        }
 
-        const forms = document.querySelectorAll('form');
-        forms.forEach(form => {
-            form.addEventListener('submit', async (e) => {
-                e.preventDefault();
+            window.onclick = (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            }
+
+            const handleSubmit = async (event, formType) => {
+                event.preventDefault();
+                const form = event.target;
                 const submitBtn = form.querySelector('button[type="submit"]');
 
                 submitBtn.disabled = true;
                 const originalText = submitBtn.textContent;
-                submitBtn.textContent = 'جاري الإرسال...';
+                submitBtn.textContent = 'Submitting...';
 
                 try {
                     const response = await fetch(form.action, {
                         method: form.method,
                         body: new FormData(form),
-                        headers: {
-                            'Accept': 'application/json'
-                        }
+                        headers: { 'Accept': 'application/json' }
                     });
 
                     if (response.ok) {
-                        showMessage('✅ تم استلام طلبك بنجاح! سنقوم بمراجعته قريباً.', true);
+                        modalContent.innerHTML = `
+                            <div class="text-green-400 text-5xl mb-4">
+                                <i class="ph-check-circle-duotone"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Submission Successful!</h3>
+                            <p class="text-gray-400">${formType === 'service' ? 'Thank you, your request will be reviewed shortly.' : 'Thank you, we will contact you soon regarding your application.'}</p>
+                        `;
                         form.reset();
                     } else {
-                        throw new Error('فشل الإرسال.');
+                        throw new Error('Submission failed.');
                     }
                 } catch (error) {
-                    console.error('حدث خطأ في الإرسال:', error);
-                    showMessage('❌ حدث خطأ أثناء الإرسال، يرجى المحاولة مرة أخرى.', false);
+                    console.error('Submission error:', error);
+                    modalContent.innerHTML = `
+                        <div class="text-red-400 text-5xl mb-4">
+                            <i class="ph-x-circle-duotone"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Submission Failed!</h3>
+                        <p class="text-gray-400">Sorry, your submission failed. Please try again.</p>
+                    `;
                 } finally {
+                    modal.style.display = 'block';
                     submitBtn.disabled = false;
                     submitBtn.textContent = originalText;
                 }
-            });
+            };
+
+            serviceForm.addEventListener('submit', (e) => handleSubmit(e, 'service'));
+            jobForm.addEventListener('submit', (e) => handleSubmit(e, 'job'));
         });
     </script>
 </body>
 </html>
 
-  

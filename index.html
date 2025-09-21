@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AXIOMTECH | حلول التجارة الإلكترونية</title>
+    <title>AXIOMTECH | E-Commerce Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #0a2463;
@@ -13,19 +14,26 @@
             --light-color: #f8f9fa;
             --dark-color: #212529;
             --success-color: #28a745;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
             background-color: #fff;
             color: var(--dark-color);
             line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
         }
         
         .container {
@@ -59,7 +67,7 @@
         .logo h1 {
             color: white;
             font-size: 1.8rem;
-            margin-right: 10px;
+            margin-left: 10px;
         }
         
         .logo span {
@@ -72,14 +80,14 @@
         }
         
         nav ul li {
-            margin-left: 20px;
+            margin-right: 20px;
         }
         
         nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s;
+            transition: var(--transition);
             padding: 5px 10px;
             border-radius: 4px;
         }
@@ -99,47 +107,49 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(10, 36, 99, 0.8), rgba(10, 36, 99, 0.9)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1415&q=80');
+            background: linear-gradient(rgba(10, 36, 99, 0.85), rgba(10, 36, 99, 0.95)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1415&q=80');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 5rem 0;
+            padding: 6rem 0;
             text-align: center;
         }
         
         .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
         }
         
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             max-width: 800px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 2.5rem;
         }
         
         .btn {
             display: inline-block;
             background-color: var(--secondary-color);
             color: white;
-            padding: 12px 25px;
+            padding: 14px 30px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s;
+            transition: var(--transition);
             border: none;
             cursor: pointer;
+            box-shadow: 0 4px 15px rgba(251, 133, 0, 0.3);
         }
         
         .btn:hover {
             background-color: #e67700;
             transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(251, 133, 0, 0.4);
         }
         
         /* Sections */
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
             position: relative;
             padding-bottom: 15px;
         }
@@ -156,7 +166,7 @@
         }
         
         section {
-            padding: 5rem 0;
+            padding: 5.5rem 0;
         }
         
         .section-light {
@@ -167,72 +177,78 @@
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
         }
         
         .service-card {
             background: white;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--secondary-color);
         }
         
         .service-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
         
         .service-content {
-            padding: 1.5rem;
+            padding: 2rem;
         }
         
         .service-content h3 {
             color: var(--primary-color);
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
         
         .service-icon {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: var(--secondary-color);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
         
         /* Forms */
         .form-container {
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            padding: 2rem;
-            max-width: 800px;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            padding: 2.5rem;
+            max-width: 850px;
             margin: 0 auto;
+            border-top: 4px solid var(--secondary-color);
         }
         
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
         }
         
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
             font-weight: 500;
+            color: var(--primary-color);
         }
         
         .form-control {
             width: 100%;
-            padding: 12px 15px;
+            padding: 14px 16px;
             border: 1px solid #ddd;
-            border-radius: 5px;
+            border-radius: 6px;
             font-size: 1rem;
-            transition: border-color 0.3s;
+            transition: var(--transition);
+            font-family: 'Poppins', sans-serif;
         }
         
         .form-control:focus {
             border-color: var(--accent-color);
             outline: none;
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
         }
         
         textarea.form-control {
-            min-height: 150px;
+            min-height: 160px;
             resize: vertical;
         }
         
@@ -241,30 +257,31 @@
             display: none;
             background-color: var(--success-color);
             color: white;
-            padding: 1rem;
-            border-radius: 5px;
-            margin-bottom: 1.5rem;
+            padding: 1.2rem;
+            border-radius: 6px;
+            margin-bottom: 1.8rem;
             text-align: center;
+            font-weight: 500;
         }
         
         /* Footer */
         footer {
             background-color: var(--primary-color);
             color: white;
-            padding: 3rem 0 1.5rem;
+            padding: 3.5rem 0 2rem;
         }
         
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
         }
         
         .footer-section h3 {
             margin-bottom: 1.5rem;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 12px;
         }
         
         .footer-section h3:after {
@@ -278,52 +295,166 @@
         }
         
         .footer-contact p {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
             display: flex;
             align-items: center;
         }
         
         .footer-contact i {
-            margin-left: 10px;
+            margin-right: 12px;
             color: var(--secondary-color);
+            width: 20px;
         }
         
         .footer-bottom {
             text-align: center;
-            padding-top: 1.5rem;
+            padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
+        /* Careers Section */
+        .careers-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3.5rem;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.2rem;
+        }
+        
+        /* Positions Available */
+        .positions-container {
+            margin: 3rem 0;
+        }
+        
+        .position-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.8rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--card-shadow);
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .position-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.2rem;
+        }
+        
+        .position-title {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+        }
+        
+        .position-tag {
+            background: var(--light-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .position-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .detail-item i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+        
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             .header-container {
                 flex-direction: column;
                 text-align: center;
             }
             
             nav ul {
-                margin-top: 1rem;
-                flex-direction: column;
-                align-items: center;
+                margin-top: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
             }
             
             nav ul li {
-                margin: 5px 0;
+                margin: 8px;
             }
             
+            .hero h2 {
+                font-size: 2.3rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
             .mobile-menu-btn {
                 display: block;
                 position: absolute;
-                top: 1rem;
-                left: 1rem;
+                top: 1.2rem;
+                right: 1rem;
+            }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            .hero {
+                padding: 4rem 0;
             }
             
             .hero h2 {
                 font-size: 2rem;
             }
             
-            .hero p {
-                font-size: 1rem;
+            .position-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .position-tag {
+                margin-top: 0.8rem;
             }
         }
 
@@ -343,6 +474,21 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        
+        /* Security Badge */
+        .security-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .security-badge i {
+            margin-right: 8px;
+            color: var(--success-color);
+        }
     </style>
 </head>
 <body>
@@ -353,15 +499,15 @@
                 <i class="fas fa-bars"></i>
             </button>
             <div class="logo">
-                <h1>AXIO<span>MTECH</span></h1>
+                <h1>AXIO<span>TECH</span></h1>
             </div>
             <nav>
                 <ul>
-                    <li><a href="#home">الرئيسية</a></li>
-                    <li><a href="#about">عن الشركة</a></li>
-                    <li><a href="#services">الخدمات</a></li>
-                    <li><a href="#strategies">الاستراتيجيات</a></li>
-                    <li><a href="#contact">اتصل بنا</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -370,19 +516,19 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <h2>حلول التجارة الإلكترونية الاحترافية</h2>
-            <p>نقدم استراتيجيات وتوصيات متقدمة لتعزيز وجودك الرقمي وزيادة مبيعاتك عبر الإنترنت</p>
-            <a href="#services" class="btn">اكتشف خدماتنا</a>
+            <h2>Professional E-Commerce Solutions</h2>
+            <p>We provide advanced strategies and recommendations to enhance your digital presence and increase your online sales</p>
+            <a href="#services" class="btn">Explore Our Services</a>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about">
         <div class="container">
-            <h2 class="section-title">عن AXIOMTECH</h2>
+            <h2 class="section-title">About AXIOMTECH</h2>
             <div class="form-container">
-                <p>AXIOMTECH هي شركة رائدة في مجال حلول التجارة الإلكترونية، نقدم خدمات استشارية متكاملة وإنشاء متاجر إلكترونية احترافية. نحن نعمل على تحليل السوق وتطوير استراتيجيات مخصصة لتحقيق أهداف أعمالك.</p>
-                <p>فريقنا من الخبراء يضم مختصين في التسويق الرقمي، تطوير الويب، تحليل البيانات وتصميم تجربة المستخدم. نضمن لعملائنا الحلول الأمثل التي تتناسب مع احتياجاتهم وتساعدهم على النمو في السوق الرقمي التنافسي.</p>
+                <p>AXIOMTECH is a leading company in e-commerce solutions, providing comprehensive consulting services and creating professional online stores. We work on market analysis and develop customized strategies to achieve your business goals.</p>
+                <p>Our team of experts includes specialists in digital marketing, web development, data analysis and user experience design. We guarantee our clients optimal solutions that suit their needs and help them grow in the competitive digital market.</p>
             </div>
         </div>
     </section>
@@ -390,15 +536,15 @@
     <!-- Services Section -->
     <section id="services" class="section-light">
         <div class="container">
-            <h2 class="section-title">خدماتنا</h2>
+            <h2 class="section-title">Our Services</h2>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-content">
                         <div class="service-icon">
                             <i class="fas fa-chart-line"></i>
                         </div>
-                        <h3>استراتيجيات التجارة الإلكترونية</h3>
-                        <p>نطور استراتيجيات مخصصة لتعزيز وجودك في السوق الرقمي وزيادة مبيعاتك عبر الإنترنت.</p>
+                        <h3>E-Commerce Strategies</h3>
+                        <p>We develop customized strategies to enhance your presence in the digital market and increase your online sales.</p>
                     </div>
                 </div>
                 <div class="service-card">
@@ -406,8 +552,8 @@
                         <div class="service-icon">
                             <i class="fas fa-store"></i>
                         </div>
-                        <h3>إنشاء المتاجر الإلكترونية</h3>
-                        <p>نصمم ونطور متاجر إلكترونية احترافية وسهلة الاستخدام تتوافق مع أحدث المعايير التقنية.</p>
+                        <h3>Online Store Creation</h3>
+                        <p>We design and develop professional and easy-to-use online stores that comply with the latest technical standards.</p>
                     </div>
                 </div>
                 <div class="service-card">
@@ -415,159 +561,80 @@
                         <div class="service-icon">
                             <i class="fas fa-file-alt"></i>
                         </div>
-                        <h3>تقارير وتحليلات</h3>
-                        <p>نقدم تقارير مفصلة وتحليلات数据 تساعدك على فهم أداء متجرك واتخاذ القرارات الصحيحة.</p>
+                        <h3>Reports & Analytics</h3>
+                        <p>We provide detailed reports and analytics that help you understand your store's performance and make the right decisions.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Strategies Section -->
-    <section id="strategies">
+    <!-- Careers Section -->
+    <section id="careers" class="section-light">
         <div class="container">
-            <h2 class="section-title">استراتيجياتنا</h2>
-            <div class="form-container">
-                <h3>نهجنا في تطوير حلول التجارة الإلكترونية</h3>
-                <p>نتبع في AXIOMTECH منهجية شاملة تعتمد على:</p>
-                <ul>
-                    <li>تحليل السوق والمنافسين لفهم البيئة التنافسية</li>
-                    <li>تحديد الجمهور المستهدف ودراسة سلوكه الشرائي</li>
-                    <li>تطوير خطة تسويقية متكاملة تركز على قنوات التسويق الفعالة</li>
-                    <li>تصميم تجربة مستخدم متميزة تزيد من معدلات التحويل</li>
-                    <li>تطوير استراتيجية محتوى جذابة وتحسين محركات البحث</li>
-                    <li>تحليل البيانات وتقديم توصيات مستمرة للتحسين</li>
-                </ul>
+            <h2 class="section-title">Join Our Team</h2>
+            
+            <div class="careers-intro">
+                <p>At AXIOMTECH, we believe that our people are our greatest asset. We're always looking for talented individuals who are passionate about e-commerce and technology to join our growing team.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Service Request Section -->
-    <section id="request-service" class="section-light">
-        <div class="container">
-            <h2 class="section-title">طلب خدمة</h2>
-            <div class="form-container">
-                <div class="success-message" id="service-success">
-                    شكراً لك! تم استلام طلبك بنجاح وسنتواصل معك قريباً.
+            
+            <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">Why Work With Us?</h3>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h4>Learning & Development</h4>
+                    <p>Continuous learning opportunities and professional growth programs</p>
                 </div>
-                <form id="service-form" action="https://formsubmit.co/boujeddaienfarid@gmail.com" method="POST">
-                    <input type="hidden" name="_subject" value="طلب خدمة جديد من موقع AXIOMTECH">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
-                    <input type="hidden" name="_captcha" value="false">
-                    
-                    <div class="form-group">
-                        <label for="name">الاسم الكامل</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
                     </div>
-                    <div class="form-group">
-                        <label for="email">البريد الإلكتروني</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">رقم الهاتف</label>
-                        <input type="tel" id="phone" name="phone" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="service-type">نوع الخدمة المطلوبة</label>
-                        <select id="service-type" name="service-type" class="form-control" required>
-                            <option value="">اختر الخدمة</option>
-                            <option value="استشارة">استشارة في التجارة الإلكترونية</option>
-                            <option value="استراتيجية">تطوير استراتيجية متكاملة</option>
-                            <option value="تصميم">تصميم متجر إلكتروني</option>
-                            <option value="تقرير">تقرير وتحليلات</option>
-                            <option value="أخرى">خدمة أخرى</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">الوصف المفصل للطلب</label>
-                        <textarea id="message" name="message" class="form-control" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">إرسال الطلب</button>
-                    <div class="spinner" id="service-spinner"></div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Join Us Section -->
-    <section id="join-us">
-        <div class="container">
-            <h2 class="section-title">انضم إلى فريقنا</h2>
-            <div class="form-container">
-                <div class="success-message" id="join-success">
-                    شكراً لك! تم استلام طلب الانضمام بنجاح وسنتواصل معك قريباً.
+                    <h4>Collaborative Environment</h4>
+                    <p>Work with talented professionals in a supportive team atmosphere</p>
                 </div>
-                <form id="join-form" action="https://formsubmit.co/boujeddaienfarid@gmail.com" method="POST">
-                    <input type="hidden" name="_subject" value="طلب انضمام جديد إلى AXIOMTECH">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
-                    <input type="hidden" name="_captcha" value="false">
-                    
-                    <div class="form-group">
-                        <label for="join-name">الاسم الكامل</label>
-                        <input type="text" id="join-name" name="name" class="form-control" required>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
                     </div>
-                    <div class="form-group">
-                        <label for="join-email">البريد الإلكتروني</label>
-                        <input type="email" id="join-email" name="email" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="join-phone">رقم الهاتف</label>
-                        <input type="tel" id="join-phone" name="phone" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="skills">المهارات والخبرات</label>
-                        <textarea id="skills" name="skills" class="form-control" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="position">المجال الذي ترغب بالعمل فيه</label>
-                        <select id="position" name="position" class="form-control" required>
-                            <option value="">اختر المجال</option>
-                            <option value="تطوير">تطوير الويب</option>
-                            <option value="تصميم">تصميم UI/UX</option>
-                            <option value="تسويق">التسويق الرقمي</option>
-                            <option value="تحليل">تحليل البيانات</option>
-                            <option value="أخرى">مجال آخر</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn">إرسال طلب الانضمام</button>
-                    <div class="spinner" id="join-spinner"></div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>AXIO<span>MTECH</span></h3>
-                    <p>شركة رائدة في تقديم حلول التجارة الإلكترونية والاستراتيجيات الرقمية.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>روابط سريعة</h3>
-                    <ul>
-                        <li><a href="#home">الرئيسية</a></li>
-                        <li><a href="#about">عن الشركة</a></li>
-                        <li><a href="#services">الخدمات</a></li>
-                        <li><a href="#strategies">الاستراتيجيات</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section footer-contact">
-                    <h3>اتصل بنا</h3>
-                    <p><i class="fas fa-envelope"></i> boujeddaienfarid@gmail.com</p>
-                    <p><i class="fas fa-phone"></i> +123456789</p>
-                    <p><i class="fas fa-map-marker-alt"></i> الجزائر</p>
+                    <h4>Growth Opportunities</h4>
+                    <p>Clear career progression paths and advancement opportunities</p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 AXIOMTECH. جميع الحقوق محفوظة</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // إدارة إرسال النماذج وعرض رسائل النجاح
-        d
+            
+            <div class="positions-container">
+                <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">Open Positions</h3>
+                
+                <div class="position-card">
+                    <div class="position-header">
+                        <h3 class="position-title">Frontend Developer</h3>
+                        <span class="position-tag">Full-time</span>
+                    </div>
+                    <div class="position-details">
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Remote / Algeria</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Mid-level</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Full-time</span>
+                        </div>
+                    </div>
+                    <p>We're looking for a skilled Frontend Developer with experience in modern JavaScript frameworks to help us create amazing e-commerce experiences.</p>
+                </div>
+                
+                <div class="position-card">
+                    <div class="position-header">
+                        <h3 class="position-title">E-Commerce Specialist</h3>
+                        <span class="position-tag">Full-time</span>
+                    </div>
+                    <div class="position-details">
+                        <div class="detail-ite

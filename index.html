@@ -188,7 +188,7 @@
             <!-- Contact Form for Business Services -->
             <div class="mt-16 bg-[#1a202c] p-8 rounded-lg max-w-2xl mx-auto text-left border border-gray-700">
                 <h3 class="text-2xl font-bold mb-4 text-center">Request Our Services</h3>
-                <form id="serviceForm" action="https://formspree.io/f/farisxboujddain@gmail.com" method="POST" class="space-y-4">
+                <form id="serviceForm" onsubmit="handleFormSubmit(event, 'service')">
                     <div>
                         <label for="service_name" class="block text-sm font-medium mb-1">Full Name</label>
                         <input type="text" id="service_name" name="Name" required
@@ -237,7 +237,7 @@
             <!-- Job Application Form -->
             <div class="mt-16 bg-[#1a202c] p-8 rounded-lg max-w-2xl mx-auto text-left border border-gray-700">
                 <h3 class="text-2xl font-bold mb-4 text-center">Apply Now</h3>
-                <form id="jobForm" action="https://formspree.io/f/farisxboujddain@gmail.com" method="POST" class="space-y-4">
+                <form id="jobForm" onsubmit="handleFormSubmit(event, 'job')">
                     <div>
                         <label for="job_name" class="block text-sm font-medium mb-1">Full Name</label>
                         <input type="text" id="job_name" name="Name" required
@@ -264,82 +264,37 @@
         <p>&copy; 2024 AXIOMTECH. All Rights Reserved.</p>
     </footer>
 
-    <!-- Success/Error Modal -->
-    <div id="statusModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <div id="modalContent"></div>
-        </div>
-    </div>
-
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const serviceForm = document.getElementById('serviceForm');
-            const jobForm = document.getElementById('jobForm');
-            const modal = document.getElementById('statusModal');
-            const modalContent = document.getElementById('modalContent');
-            const closeBtn = document.querySelector('.close-btn');
+        function handleFormSubmit(event, formType) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            let subject, body;
+            
+            if (formType === 'service') {
+                const name = formData.get('Name');
+                const email = formData.get('Email');
+                const serviceType = formData.get('Service Type');
+                const details = formData.get('Request Details');
+                
+                subject = `New Service Request from ${name}`;
+                body = `Name: ${name}\nEmail: ${email}\nService Type: ${serviceType}\n\nDetails:\n${details}`;
+            } else if (formType === 'job') {
+                const name = formData.get('Name');
+                const email = formData.get('Email');
+                const skills = formData.get('Skills');
 
-            closeBtn.onclick = () => {
-                modal.style.display = 'none';
+                subject = `New Job Application from ${name}`;
+                body = `Name: ${name}\nEmail: ${email}\n\nSkills:\n${skills}`;
             }
 
-            window.onclick = (event) => {
-                if (event.target === modal) {
-                    modal.style.display = 'none';
-                }
-            }
-
-            const handleSubmit = async (event, formType) => {
-                event.preventDefault();
-                const form = event.target;
-                const submitBtn = form.querySelector('button[type="submit"]');
-
-                submitBtn.disabled = true;
-                const originalText = submitBtn.textContent;
-                submitBtn.textContent = 'Submitting...';
-
-                try {
-                    const response = await fetch(form.action, {
-                        method: form.method,
-                        body: new FormData(form),
-                        headers: { 'Accept': 'application/json' }
-                    });
-
-                    if (response.ok) {
-                        modalContent.innerHTML = `
-                            <div class="text-green-400 text-5xl mb-4">
-                                <i class="ph-check-circle-duotone"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold mb-2">Submission Successful!</h3>
-                            <p class="text-gray-400">${formType === 'service' ? 'Thank you, your request will be reviewed shortly.' : 'Thank you, we will contact you soon regarding your application.'}</p>
-                        `;
-                        form.reset();
-                    } else {
-                        // Attempt to parse JSON error message from Formspree response
-                        const errorData = await response.json();
-                        throw new Error(errorData.error || 'Submission failed.');
-                    }
-                } catch (error) {
-                    console.error('Submission error:', error);
-                    modalContent.innerHTML = `
-                        <div class="text-red-400 text-5xl mb-4">
-                            <i class="ph-x-circle-duotone"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-2">Submission Failed!</h3>
-                        <p class="text-gray-400">Sorry, your submission failed. Please try again. Error: ${error.message}</p>
-                    `;
-                } finally {
-                    modal.style.display = 'block';
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = originalText;
-                }
-            };
-
-            serviceForm.addEventListener('submit', (e) => handleSubmit(e, 'service'));
-            jobForm.addEventListener('submit', (e) => handleSubmit(e, 'job'));
-        });
+            const mailtoLink = `mailto:farisxboujddain@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            window.location.href = mailtoLink;
+        }
     </script>
 </body>
 </html>
 
+                            

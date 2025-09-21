@@ -3,18 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AxiomTech - Tailored Business Solutions</title>
+  <title>AxiomTech - Business Solutions & Careers</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Inter', sans-serif; background-color: #1a1a2e; color: #e0e0e0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #1a1a2e, #24244a, #3a3a5a);
+      color: #e0e0e0;
+    }
     html { scroll-behavior: smooth; }
     .section-title::after {
       content: '';
       position: absolute;
       bottom: -8px;
-      left: 0;
-      width: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
       height: 4px;
       background-color: #ff5733;
       border-radius: 2px;
@@ -25,13 +30,14 @@
 <body class="overflow-x-hidden">
 
   <!-- Header -->
-  <header class="bg-[#24244a] text-white py-4 px-6 shadow-lg rounded-b-3xl fixed w-full z-50">
-    <nav class="container mx-auto flex justify-between items-center flex-wrap">
+  <header class="bg-[#24244a]/90 backdrop-blur-md text-white py-4 px-6 shadow-lg rounded-b-3xl fixed w-full z-50">
+    <nav class="container mx-auto flex justify-between items-center">
       <a href="#hero" class="text-3xl font-bold text-[#ff5733] hover:text-[#ff7f50]">AxiomTech</a>
       <ul class="flex space-x-6">
         <li><a href="#services" class="hover:text-[#ff5733]">Services</a></li>
         <li><a href="#strategies" class="hover:text-[#ff5733]">Strategies</a></li>
-        <li><a href="#contact" class="bg-[#ff5733] hover:bg-[#ff7f50] px-4 py-2 rounded-full">Let's Talk</a></li>
+        <li><a href="#join-us" class="hover:text-[#ff5733]">Careers</a></li>
+        <li><a href="#contact" class="bg-[#ff5733] hover:bg-[#ff7f50] px-4 py-2 rounded-full">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -40,61 +46,68 @@
 
     <!-- Hero Section -->
     <section id="hero" class="text-center mb-20">
-      <h1 class="text-5xl md:text-7xl font-extrabold text-[#ff5733] mb-4">Tailored Solutions for Your Business</h1>
-      <p class="text-xl text-gray-300 mb-6 max-w-2xl mx-auto">We create custom reports, brand templates, and strategies designed specifically to grow your business. Let's turn your ideas into results.</p>
-      <a href="#contact" class="px-8 py-4 bg-[#ff5733] rounded-full text-white hover:bg-[#ff7f50]">Request Your Solution</a>
+      <h1 class="text-5xl md:text-7xl font-extrabold text-[#ff5733] drop-shadow-lg mb-4">Empowering Your Business</h1>
+      <p class="text-xl text-gray-300 mb-6 max-w-2xl mx-auto">Custom reports, brand templates, and business strategies crafted to grow your vision. Your success is our mission.</p>
+      <a href="#contact" class="px-8 py-4 bg-[#ff5733] rounded-full text-white hover:bg-[#ff7f50] hover:scale-105 transition-transform">Let's Work Together</a>
     </section>
 
-    <!-- Services Section -->
+    <!-- Services -->
     <section id="services" class="mb-20">
-      <h2 class="text-4xl font-bold text-center mb-12 section-title">Our Core Services</h2>
+      <h2 class="text-4xl font-bold text-center mb-12 relative section-title">Our Core Services</h2>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-[#24244a] p-6 rounded-2xl shadow-lg text-center">
-          <div class="text-5xl mb-3">🎨</div>
-          <h3 class="text-xl font-bold">Brand & Template Design</h3>
-          <p class="text-gray-400">We create custom brand kits and professional templates that make your business stand out.</p>
+        <div class="bg-[#24244a] p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform">
+          <div class="text-5xl mb-3 text-center">🎨</div>
+          <h3 class="text-xl font-bold text-center">Brand & Template Design</h3>
+          <p class="text-gray-400 text-center">Professional branding kits and templates tailored to your identity.</p>
         </div>
-        <div class="bg-[#24244a] p-6 rounded-2xl shadow-lg text-center">
-          <div class="text-5xl mb-3">📊</div>
-          <h3 class="text-xl font-bold">Custom Reports</h3>
-          <p class="text-gray-400">Business reports, analytics and dashboards designed to give you clear insights.</p>
+        <div class="bg-[#24244a] p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform">
+          <div class="text-5xl mb-3 text-center">📊</div>
+          <h3 class="text-xl font-bold text-center">Custom Reports</h3>
+          <p class="text-gray-400 text-center">Clear, detailed reports and analytics for smarter decisions.</p>
         </div>
-        <div class="bg-[#24244a] p-6 rounded-2xl shadow-lg text-center">
-          <div class="text-5xl mb-3">🎯</div>
-          <h3 class="text-xl font-bold">Business Strategy</h3>
-          <p class="text-gray-400">Tailored strategies and consulting to help your project reach the next level.</p>
+        <div class="bg-[#24244a] p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform">
+          <div class="text-5xl mb-3 text-center">🎯</div>
+          <h3 class="text-xl font-bold text-center">Business Strategy</h3>
+          <p class="text-gray-400 text-center">Actionable strategies to grow and scale your business.</p>
         </div>
       </div>
     </section>
 
-    <!-- Strategies Section -->
+    <!-- Strategies -->
     <section id="strategies" class="mb-20 text-center">
-      <h2 class="text-4xl font-bold text-center mb-12 section-title">Insights & Strategies</h2>
-      <p class="max-w-2xl mx-auto text-gray-300 mb-8 text-lg">Every successful business starts with a solid plan. We analyze your goals and offer actionable steps to increase revenue, improve efficiency, and strengthen your brand identity.</p>
-      <p class="max-w-2xl mx-auto text-gray-400 italic">"Our mission is to empower entrepreneurs with knowledge and tools they need to succeed."</p>
+      <h2 class="text-4xl font-bold text-center mb-12 relative section-title">Insights & Strategies</h2>
+      <p class="max-w-2xl mx-auto text-gray-300 mb-6 text-lg">We analyze your goals and provide a step-by-step roadmap to success. From branding to analytics, our solutions are built to make your business thrive.</p>
+      <p class="max-w-2xl mx-auto text-gray-400 italic">"Strong businesses are built with strong foundations — let us build yours."</p>
+    </section>
+
+    <!-- Careers Section -->
+    <section id="join-us" class="mb-20 text-center">
+      <h2 class="text-4xl font-bold text-center mb-12 relative section-title">Join Our Team</h2>
+      <p class="text-gray-300 mb-8">We are looking for passionate developers, designers, and creative minds to join AxiomTech. Submit your details and we'll reach out to you.</p>
+      <form class="contact-form bg-[#24244a] p-8 rounded-2xl shadow-xl max-w-xl mx-auto space-y-4">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="Full Name" placeholder="Full Name" required class="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-[#ff5733]">
+        <input type="email" name="Email" placeholder="Email Address" required class="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-[#ff5733]">
+        <input type="text" name="Speciality" placeholder="Your Speciality (e.g. Frontend Developer)" required class="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-[#ff5733]">
+        <textarea name="Message" placeholder="Tell us about your experience..." rows="4" required class="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-[#ff5733]"></textarea>
+        <button type="submit" class="px-6 py-3 bg-[#ff5733] rounded-full hover:bg-[#ff7f50] text-white font-bold w-full">Submit Application</button>
+      </form>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="mb-20">
-      <h2 class="text-4xl font-bold text-center mb-12 section-title">Tell Us What You Need</h2>
+      <h2 class="text-4xl font-bold text-center mb-12 relative section-title">Contact Us</h2>
       <form class="contact-form bg-[#24244a] p-8 rounded-2xl shadow-xl max-w-xl mx-auto space-y-4">
         <input type="hidden" name="_captcha" value="false">
         <input type="text" name="Name" placeholder="Your Name" required class="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-[#ff5733]">
         <input type="email" name="Email" placeholder="Your Email" required class="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-[#ff5733]">
-        <label class="block text-left text-gray-300 font-semibold">Select Services You Need:</label>
-        <div class="grid grid-cols-2 gap-3 text-left">
-          <label><input type="checkbox" name="Service" value="Brand Design"> Brand Design</label>
-          <label><input type="checkbox" name="Service" value="Report Creation"> Report Creation</label>
-          <label><input type="checkbox" name="Service" value="Business Strategy"> Business Strategy</label>
-          <label><input type="checkbox" name="Service" value="Website Design"> Website Design</label>
-        </div>
-        <textarea name="Message" placeholder="Describe your project or request..." rows="4" required class="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-[#ff5733]"></textarea>
-        <button type="submit" class="px-6 py-3 bg-[#ff5733] rounded-full hover:bg-[#ff7f50] text-white font-bold w-full">Send Request</button>
+        <textarea name="Message" placeholder="Write your message here..." rows="4" required class="w-full px-4 py-3 rounded-lg bg-[#1a1a2e] border border-[#ff5733]"></textarea>
+        <button type="submit" class="px-6 py-3 bg-[#ff5733] rounded-full hover:bg-[#ff7f50] text-white font-bold w-full">Send</button>
       </form>
 
       <!-- WhatsApp Button -->
       <div class="text-center mt-8">
-        <a href="https://wa.me/212722456101?text=Hello%2C%20I%20have%20a%20custom%20request%20for%20my%20business" target="_blank"
+        <a href="https://wa.me/212722456101?text=Hello%2C%20I%20have%20a%20business%20inquiry" target="_blank"
            class="inline-flex items-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-bold rounded-full shadow-lg transition-colors duration-300">
           💬 Contact us on WhatsApp
         </a>
@@ -106,8 +119,8 @@
   <!-- Popup -->
   <div id="popup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
     <div class="bg-[#24244a] p-8 rounded-2xl shadow-xl text-center max-w-sm">
-      <h3 class="text-2xl font-bold text-white mb-2">✅ Request Sent</h3>
-      <p class="text-gray-300">Thank you! Your request has been sent successfully.</p>
+      <h3 class="text-2xl font-bold text-white mb-2">✅ Sent Successfully</h3>
+      <p class="text-gray-300">Thank you! Your form has been submitted.</p>
       <button onclick="document.getElementById('popup').style.display='none'" class="mt-4 px-6 py-2 bg-[#ff5733] text-white rounded-full hover:bg-[#ff7f50]">Close</button>
     </div>
   </div>

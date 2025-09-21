@@ -316,7 +316,9 @@
                         `;
                         form.reset();
                     } else {
-                        throw new Error('Submission failed.');
+                        // Attempt to parse JSON error message from Formspree response
+                        const errorData = await response.json();
+                        throw new Error(errorData.error || 'Submission failed.');
                     }
                 } catch (error) {
                     console.error('Submission error:', error);
@@ -325,7 +327,7 @@
                             <i class="ph-x-circle-duotone"></i>
                         </div>
                         <h3 class="text-2xl font-bold mb-2">Submission Failed!</h3>
-                        <p class="text-gray-400">Sorry, your submission failed. Please try again.</p>
+                        <p class="text-gray-400">Sorry, your submission failed. Please try again. Error: ${error.message}</p>
                     `;
                 } finally {
                     modal.style.display = 'block';

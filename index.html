@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Faris Boujdayn - Portfolio</title>
+  <title>AXIOMTECH - Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@tailwindcss/forms"></script>
 </head>
-<body class="bg-gray-100 font-sans text-gray-800">
+<body class="bg-gray-50 font-sans text-gray-800">
 
   <!-- Header -->
-  <header class="bg-white shadow-md">
+  <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="container mx-auto flex justify-between items-center p-4">
-      <h1 class="text-xl font-bold text-blue-600">Faris Boujdayn</h1>
-      <nav class="space-x-4">
+      <h1 class="text-2xl font-bold text-blue-700">AXIOMTECH</h1>
+      <nav class="space-x-6 hidden md:flex">
         <a href="#about" class="hover:text-blue-600">About</a>
         <a href="#services" class="hover:text-blue-600">Services</a>
         <a href="#projects" class="hover:text-blue-600">Projects</a>
@@ -22,91 +23,94 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="text-center py-16 bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
-    <h2 class="text-4xl font-bold mb-4">Hi, I'm Faris Boujdayn</h2>
-    <p class="text-lg">Web Developer & Designer</p>
+  <section class="text-center py-24 bg-gradient-to-r from-blue-700 to-indigo-600 text-white">
+    <h2 class="text-5xl font-bold mb-6">Welcome to AXIOMTECH</h2>
+    <p class="text-lg mb-6">Building Modern, Fast & Professional Websites</p>
+    <a href="#contact" class="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold shadow hover:bg-gray-100">Get in Touch</a>
   </section>
 
   <!-- About -->
-  <section id="about" class="container mx-auto py-16 px-4">
-    <h2 class="text-2xl font-bold mb-4 text-center">About Me</h2>
-    <p class="text-center max-w-2xl mx-auto">
-      I'm a web developer specializing in creating fast and modern websites using the latest technologies.  
-      I love building smooth and professional user experiences that help businesses and individuals grow their online presence.
+  <section id="about" class="container mx-auto py-20 px-6">
+    <h2 class="text-3xl font-bold mb-6 text-center text-blue-700">About Me</h2>
+    <p class="text-center max-w-3xl mx-auto text-gray-600">
+      I'm <strong>Faris Boujdayn</strong>, a passionate web developer specialized in 
+      creating fast, secure, and visually appealing websites.  
+      My mission is to help businesses and individuals grow their digital presence with 
+      modern technologies and creative solutions.
     </p>
   </section>
 
   <!-- Services -->
-  <section id="services" class="bg-gray-50 py-16 px-4">
-    <h2 class="text-2xl font-bold mb-8 text-center">Services</h2>
+  <section id="services" class="bg-gray-100 py-20 px-6">
+    <h2 class="text-3xl font-bold mb-12 text-center text-blue-700">Services</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 container mx-auto">
-      <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
         <h3 class="font-bold text-xl mb-2">Web Design</h3>
-        <p>Modern UI/UX designs using HTML, CSS, Tailwind.</p>
+        <p class="text-gray-600">Modern and responsive UI/UX using HTML, CSS, Tailwind.</p>
       </div>
-      <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
         <h3 class="font-bold text-xl mb-2">Web Development</h3>
-        <p>Interactive websites built with JavaScript and Next.js.</p>
+        <p class="text-gray-600">Dynamic, fast and secure websites with JavaScript & Next.js.</p>
       </div>
-      <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
         <h3 class="font-bold text-xl mb-2">SEO & Performance</h3>
-        <p>Website optimization for speed and search engines.</p>
+        <p class="text-gray-600">Boost ranking & site speed with SEO optimization and analytics.</p>
       </div>
     </div>
   </section>
 
   <!-- Projects -->
-  <section id="projects" class="container mx-auto py-16 px-4">
-    <h2 class="text-2xl font-bold mb-8 text-center">Projects</h2>
+  <section id="projects" class="container mx-auto py-20 px-6">
+    <h2 class="text-3xl font-bold mb-12 text-center text-blue-700">Projects</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="bg-white shadow rounded-lg overflow-hidden">
+      <div class="bg-white shadow rounded-lg overflow-hidden hover:shadow-xl transition">
         <img src="https://via.placeholder.com/400x200" alt="Project 1" class="w-full">
         <div class="p-4">
-          <h3 class="font-bold">Project 1</h3>
-          <p>Corporate website with services and contact pages.</p>
+          <h3 class="font-bold">Corporate Website</h3>
+          <p class="text-gray-600">Clean and professional business website.</p>
         </div>
       </div>
-      <div class="bg-white shadow rounded-lg overflow-hidden">
+      <div class="bg-white shadow rounded-lg overflow-hidden hover:shadow-xl transition">
         <img src="https://via.placeholder.com/400x200" alt="Project 2" class="w-full">
         <div class="p-4">
-          <h3 class="font-bold">Project 2</h3>
-          <p>E-commerce demo with shopping cart integration.</p>
+          <h3 class="font-bold">E-commerce Store</h3>
+          <p class="text-gray-600">Demo online shop with cart & payment system.</p>
         </div>
       </div>
-      <div class="bg-white shadow rounded-lg overflow-hidden">
+      <div class="bg-white shadow rounded-lg overflow-hidden hover:shadow-xl transition">
         <img src="https://via.placeholder.com/400x200" alt="Project 3" class="w-full">
         <div class="p-4">
-          <h3 class="font-bold">Project 3</h3>
-          <p>Personal blog and portfolio site.</p>
+          <h3 class="font-bold">Personal Blog</h3>
+          <p class="text-gray-600">Custom blog & portfolio with CMS integration.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="bg-blue-600 text-white py-16 px-4">
-    <h2 class="text-2xl font-bold mb-4 text-center">Contact Me</h2>
-    <p class="text-center mb-8">You can reach me via email or social networks</p>
+  <section id="contact" class="bg-blue-700 text-white py-20 px-6">
+    <h2 class="text-3xl font-bold mb-6 text-center">Contact Me</h2>
+    <p class="text-center mb-8">Let's build something amazing together 🚀</p>
     <div class="text-center space-x-4">
-      <a href="mailto:boujeddaienfarid@gmail.com" class="bg-white text-blue-600 px-4 py-2 rounded">📧 Email</a>
-      <a href="#" class="bg-white text-blue-600 px-4 py-2 rounded">💼 LinkedIn</a>
-      <a href="#" class="bg-white text-blue-600 px-4 py-2 rounded">🐦 Twitter</a>
+      <a href="mailto:boujeddaienfarid@gmail.com" class="bg-white text-blue-700 px-5 py-2 rounded-lg shadow">📧 Email</a>
+      <a href="https://www.linkedin.com/in/fares-boujeddien-b28115384" target="_blank" class="bg-white text-blue-700 px-5 py-2 rounded-lg shadow">💼 LinkedIn</a>
+      <a href="https://x.com/FBoujeddaien?t=LKvYJJXaiWK0eneRSoiVYQ&s=09" target="_blank" class="bg-white text-blue-700 px-5 py-2 rounded-lg shadow">🐦 Twitter</a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="bg-gray-800 text-white text-center py-4">
-    <p>© 2025 Faris Boujdayn - All rights reserved</p>
+    <p>© 2025 AXIOMTECH - All Rights Reserved</p>
   </footer>
 
   <!-- Chatbot -->
-  <div id="chatbot" class="fixed bottom-5 right-5 w-72 bg-white shadow-xl rounded-lg overflow-hidden">
-    <div class="bg-blue-600 text-white p-3 font-bold">💬 Assistant</div>
-    <div id="chat-messages" class="h-60 overflow-y-auto p-3 text-sm space-y-2"></div>
+  <div id="chatbot" class="fixed bottom-5 right-5 w-80 bg-white shadow-2xl rounded-lg overflow-hidden border">
+    <div class="bg-blue-700 text-white p-3 font-bold flex items-center">🤖 AXIOMTECH Assistant</div>
+    <div id="chat-messages" class="h-72 overflow-y-auto p-3 text-sm space-y-3 bg-gray-50"></div>
     <div class="flex border-t">
-      <input id="chat-input" type="text" placeholder="Ask me something..." 
+      <input id="chat-input" type="text" placeholder="Type your message..." 
              class="flex-grow p-2 outline-none">
-      <button id="send-btn" class="bg-blue-600 text-white px-4">Send</button>
+      <button id="send-btn" class="bg-blue-700 text-white px-4">Send</button>
     </div>
   </div>
 
@@ -115,26 +119,41 @@
     const input = document.getElementById("chat-input");
     const sendBtn = document.getElementById("send-btn");
 
+    // Add message bubble
     function addMessage(text, sender="user") {
       const msg = document.createElement("div");
       msg.className = sender === "user" 
-        ? "text-right text-blue-600" 
-        : "text-left text-gray-700";
-      msg.innerText = text;
+        ? "text-right"
+        : "text-left";
+      msg.innerHTML = `<span class="inline-block px-3 py-2 rounded-lg ${sender === "user" ? 'bg-blue-100 text-blue-800' : 'bg-gray-200 text-gray-800'}">${text}</span>`;
       messages.appendChild(msg);
       messages.scrollTop = messages.scrollHeight;
     }
 
+    // Bot smart replies
     function botReply(question) {
       question = question.toLowerCase();
-      if (question.includes("service")) {
-        return "I provide: Web Design, Web Development, and SEO optimization ✅";
+      if (question.includes("hello") || question.includes("hi")) {
+        return "Hello! 👋 Welcome to AXIOMTECH. How can I help you today?";
+      } else if (question.includes("service")) {
+        return "We provide: \n- 🌐 Web Design \n- ⚡ Web Development \n- 🚀 SEO & Optimization";
       } else if (question.includes("contact") || question.includes("email")) {
-        return "You can reach me at: boujeddaienfarid@gmail.com 📧";
+        return "📧 You can reach me anytime at: boujeddaienfarid@gmail.com";
+      } else if (question.includes("linkedin")) {
+        return "Here’s my LinkedIn: 👉 https://www.linkedin.com/in/fares-boujeddien-b28115384";
+      } else if (question.includes("twitter")) {
+        return "You can follow me on Twitter: 🐦 https://x.com/FBoujeddaien";
       } else {
-        return "Sorry, I didn’t understand. Try another question 🙂";
+        return "I'm not sure I understood 🤔. Try asking about services, contact, or social links.";
       }
     }
+
+    // Welcome message
+    window.onload = () => {
+      setTimeout(() => {
+        addMessage("👋 Hi! I'm the AXIOMTECH Assistant. Ask me about services, contact info, or anything else!", "bot");
+      }, 500);
+    };
 
     sendBtn.addEventListener("click", () => {
       const text = input.value.trim();
@@ -148,4 +167,4 @@
   </script>
 
 </body>
-</html>
+  </html>

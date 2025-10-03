@@ -1,230 +1,266 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ZenCode - حلول رقمية متكاملة</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    :root {
-      --primary: #00695c;
-      --secondary: #ff5722;
-      --light: #f9f9f9;
-      --dark: #212121;
-      --gray: #757575;
-      --white: #ffffff;
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>AXIOM — Operator Access</title>
+<style>
+  :root{
+    --bg1:#05060a; --bg2:#071026;
+    --accent:#00e6ff; --muted:#9aa7b2; --glass: rgba(255,255,255,0.03);
+    --mono: "SFMono-Regular", "Menlo", "Monaco", "Courier New", monospace;
+  }
+  /* Reset */
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:var(--mono);
+    background: radial-gradient(ellipse at 10% 10%, rgba(0,150,180,0.07), transparent 10%),
+                linear-gradient(180deg,var(--bg1),var(--bg2));
+    color:var(--accent);
+    overflow:hidden;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Tajawal', sans-serif;
-    }
+  /* subtle noise */
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;
+    background-image:linear-gradient(transparent 50%, rgba(0,0,0,0.02) 50%);
+    background-size:100% 2px;mix-blend-mode:overlay;opacity:0.6;
+  }
 
-    body {
-      line-height: 1.6;
-      color: var(--dark);
-    }
+  /* center terminal card */
+  .wrap{
+    height:100vh;display:grid;place-items:center;padding:20px;
+  }
 
-    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;900&display=swap');
+  .terminal {
+    width:min(1100px,96%);
+    max-width:1100px;
+    border-radius:12px;
+    background:linear-gradient(180deg, rgba(10,12,18,0.85), rgba(5,8,12,0.70));
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+    padding:28px;
+    border:1px solid rgba(0,230,255,0.06);
+    position:relative;
+    overflow:hidden;
+  }
 
-    /* شريط التنقل */
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(255,255,255,0.95);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      z-index: 1000;
-    }
-    .navbar-container {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 20px;
-    }
-    .logo {
-      font-size: 26px;
-      font-weight: 700;
-      color: var(--primary);
-      text-decoration: none;
-    }
-    .nav-links {
-      display: flex;
-      list-style: none;
-    }
-    .nav-links li {
-      margin-right: 20px;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: var(--dark);
-      font-weight: 500;
-      position: relative;
-    }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      bottom: -5px;
-      width: 0;
-      height: 2px;
-      background: var(--secondary);
-      transition: width .3s;
-    }
-    .nav-links a:hover::after {
-      width: 100%;
-    }
+  /* top bar (buttons) */
+  .term-top {
+    display:flex;gap:10px;align-items:center;margin-bottom:14px;
+  }
+  .dots{
+    display:flex;gap:8px;align-items:center;
+  }
+  .dot{width:12px;height:12px;border-radius:50%}
+  .dot.red{background:#ff5f56;box-shadow:0 0 12px rgba(255,95,86,0.12)}
+  .dot.yellow{background:#ffbd2e;box-shadow:0 0 10px rgba(255,189,46,0.06)}
+  .dot.green{background:#28c840;box-shadow:0 0 10px rgba(40,200,64,0.06)}
 
-    /* البطل */
-    .hero {
-      height: 100vh;
-      background: linear-gradient(rgba(0,105,92,.8), rgba(0,0,0,.6)),
-        url('https://images.unsplash.com/photo-1504691342899-8d2d2d6e6e6e?auto=format&fit=crop&w=1950&q=80');
-      background-size: cover;
-      background-position: center;
-      color: var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 20px;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 15px;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 25px;
-    }
-    .btn {
-      padding: 12px 25px;
-      border-radius: 30px;
-      background: var(--secondary);
-      color: var(--white);
-      text-decoration: none;
-      font-weight: 600;
-      transition: .3s;
-    }
-    .btn:hover {
-      background: #e64a19;
-      transform: translateY(-3px);
-    }
+  .term-title{
+    margin-left:auto;color:var(--muted);font-size:0.9rem;
+    letter-spacing:0.06em;
+  }
 
-    /* الخدمات */
-    .services {
-      padding: 80px 20px;
-      background: var(--light);
-    }
-    .section-title {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-    .section-title h2 {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
-      color: var(--primary);
-    }
-    .services-container {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .service-card {
-      width: 320px;
-      background: var(--white);
-      padding: 25px;
-      margin: 15px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,.05);
-      text-align: center;
-      transition: .3s;
-    }
-    .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 25px rgba(0,0,0,.1);
-    }
-    .service-card i {
-      font-size: 2.5rem;
-      color: var(--secondary);
-      margin-bottom: 15px;
-    }
+  /* terminal content */
+  .content{
+    display:flex;gap:28px;
+  }
 
-    /* الفوتر */
-    .footer {
-      background: var(--primary);
-      color: var(--white);
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .footer p {
-      margin: 0;
-      color: rgba(255,255,255,0.7);
-    }
+  .left {
+    width:48%;
+    min-width:260px;
+    border-right:1px solid rgba(255,255,255,0.02);
+    padding-right:22px;
+  }
 
-    @media(max-width:768px){
-      .nav-links {
-        display: none;
-      }
-    }
-  </style>
+  .right {
+    flex:1;padding-left:22px;display:flex;flex-direction:column;gap:12px;
+  }
+
+  .logo {
+    color:var(--muted);font-size:0.85rem;margin-bottom:12px;
+  }
+
+  .screen {
+    background:linear-gradient(180deg, rgba(0,0,0,0.06), transparent);
+    padding:16px;border-radius:8px;min-height:220px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+    overflow:hidden;
+    position:relative;
+  }
+
+  .lines{font-size:0.95rem;line-height:1.45;color:var(--accent);white-space:pre-wrap}
+  .muted{color:var(--muted);font-size:0.85rem}
+
+  /* typing effect */
+  .type { display:inline-block; border-right:2px solid var(--accent); padding-right:6px; animation: blink 1s steps(1) infinite; }
+  @keyframes blink {50%{border-color:transparent}}
+
+  /* big welcome on the right */
+  .hero-big{
+    font-size:1.18rem;color:#e6ffff;line-height:1.2;
+    text-shadow: 0 2px 18px rgba(0,230,255,0.06);
+  }
+  .hero-sub{color:var(--muted);font-size:0.95rem;margin-top:6px}
+
+  /* action buttons */
+  .actions{display:flex;gap:12px;margin-top:18px}
+  .btn{
+    background:linear-gradient(180deg, rgba(0,230,255,0.08), rgba(0,230,255,0.03));
+    border:1px solid rgba(0,230,255,0.08);
+    color:var(--accent);padding:10px 14px;border-radius:8px;
+    cursor:pointer;font-weight:600;backdrop-filter:blur(4px)
+  }
+  .btn.ghost{background:transparent;border:1px dashed rgba(255,255,255,0.03);color:var(--muted)}
+  .btn:hover{transform:translateY(-2px);transition:all .18s ease}
+
+  /* footer small */
+  .meta{font-size:0.8rem;color:var(--muted);margin-top:10px}
+
+  /* subtle scanline animation */
+  .scanline{
+    position:absolute;left:-10%;right:-10%;height:120px;top:-40%;
+    background:linear-gradient(180deg, transparent, rgba(0,230,255,0.03), transparent);
+    transform:rotate(20deg);opacity:0.35;filter:blur(20px);
+    animation: slide 8s linear infinite;
+    pointer-events:none;
+  }
+  @keyframes slide {0%{transform:translateX(-100%) rotate(20deg)}100%{transform:translateX(100%) rotate(20deg)}}
+
+  /* responsive */
+  @media (max-width:900px){
+    .content{flex-direction:column}
+    .left{width:100%;border-right:none;padding-right:0}
+    .right{padding-left:0}
+  }
+</style>
 </head>
 <body>
-  <!-- شريط التنقل -->
-  <nav class="navbar">
-    <div class="navbar-container">
-      <a href="#" class="logo"><i class="fa-solid fa-code"></i> ZenCode</a>
-      <ul class="nav-links">
-        <li><a href="#services">خدماتنا</a></li>
-        <li><a href="#about">من نحن</a></li>
-        <li><a href="#contact">تواصل معنا</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="wrap">
+    <div class="terminal" role="region" aria-label="AXIOM Operator Console">
+      <div class="scanline" aria-hidden="true"></div>
 
-  <!-- القسم الرئيسي -->
-  <section class="hero">
-    <div>
-      <h1>حلول رقمية متكاملة لشركتك</h1>
-      <p>نساعدك على بناء موقعك وتطبيقاتك بأحدث التقنيات</p>
-      <a href="#services" class="btn">اكتشف خدماتنا</a>
-    </div>
-  </section>
+      <div class="term-top">
+        <div class="dots">
+          <div class="dot red" aria-hidden="true"></div>
+          <div class="dot yellow" aria-hidden="true"></div>
+          <div class="dot green" aria-hidden="true"></div>
+        </div>
+        <div class="term-title">AXIOM / secure-shell</div>
+      </div>
 
-  <!-- الخدمات -->
-  <section class="services" id="services">
-    <div class="section-title">
-      <h2>خدماتنا</h2>
-      <p>مجموعة من الحلول التقنية لتطوير أعمالك</p>
-    </div>
-    <div class="services-container">
-      <div class="service-card">
-        <i class="fa-solid fa-laptop-code"></i>
-        <h3>تطوير مواقع</h3>
-        <p>بناء مواقع ويب حديثة وسريعة الاستجابة.</p>
-      </div>
-      <div class="service-card">
-        <i class="fa-solid fa-mobile-screen-button"></i>
-        <h3>تطبيقات موبايل</h3>
-        <p>تصميم تطبيقات أندرويد و iOS حسب طلبك.</p>
-      </div>
-      <div class="service-card">
-        <i class="fa-solid fa-cloud"></i>
-        <h3>خدمات سحابية</h3>
-        <p>استضافة وحلول Cloud آمنة ومرنة.</p>
+      <div class="content">
+        <div class="left" aria-hidden="false">
+          <div class="logo">AXIOM<span style="color:var(--accent)">TECH</span></div>
+          <div class="screen" id="console">
+            <div class="lines" id="lines">
+              <span class="muted">[system] initializing secure environment...</span>
+              <br><br>
+              <span class="muted">[auth] verifying operator key: </span><span id="key" class="type"></span>
+              <br>
+              <span class="muted">[core] unlocking interface: </span><span id="stage" class="type"></span>
+            </div>
+          </div>
+
+          <div class="meta">Press <kbd>ENTER</kbd> to proceed — or click "Enter Console"</div>
+        </div>
+
+        <div class="right">
+          <div class="hero-big" id="greeting">Welcome, Operator.</div>
+          <div class="hero-sub" id="subtitle">You have been granted temporary access. Proceed with purpose — discretion required.</div>
+
+          <div class="actions" aria-hidden="false">
+            <button class="btn" id="enterBtn">Enter Console</button>
+            <button class="btn ghost" id="aboutBtn">About AXIOM</button>
+          </div>
+
+          <div class="meta" id="small">Secure session • Encrypted • Time-limited</div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- الفوتر -->
-  <footer class="footer">
-    <p>© 2025 ZenCode. جميع الحقوق محفوظة.</p>
-  </footer>
+<script>
+/* typing utility */
+function typeText(el, text, speed=25, callback){
+  el.textContent = "";
+  let i=0;
+  function step(){
+    if(i<=text.length-1){
+      el.textContent += text[i++];
+      setTimeout(step, speed);
+    }else if(callback) callback();
+  }
+  step();
+}
+
+/* staged console reveal */
+const keyEl = document.getElementById('key');
+const stageEl = document.getElementById('stage');
+const lines = document.getElementById('lines');
+const greeting = document.getElementById('greeting');
+const subtitle = document.getElementById('subtitle');
+const enterBtn = document.getElementById('enterBtn');
+const aboutBtn = document.getElementById('aboutBtn');
+
+const operatorKey = '●●●-OP#-' + Math.random().toString(36).slice(2,9).toUpperCase();
+const stages = ['DEPLOYED', 'AUTH OK', 'ENV READY'];
+
+function bootSequence(){
+  typeText(keyEl, operatorKey, 30, ()=>{
+    setTimeout(()=> {
+      typeText(stageEl, stages[0], 80, ()=>{
+        setTimeout(()=> {
+          lines.innerHTML += '\n\n' + '<span class="muted">[core] loading modules:</span> <span class="type">» network • vault • telemetry</span>';
+          setTimeout(()=> {
+            lines.innerHTML += '\n' + '<span class="muted">[core] secure channel established.</span>';
+            // update greeting
+            setTimeout(()=> {
+              greeting.textContent = 'Welcome, Operator.';
+              subtitle.textContent = 'Mission parameters loaded. Act deliberately.';
+            },700);
+          },600);
+        },700);
+      });
+    },700);
+  });
+}
+
+/* on click or enter */
+function openConsole(){
+  // subtle transition: expand terminal to full-screen feeling
+  const term = document.querySelector('.terminal');
+  term.style.transition = 'transform .45s ease, box-shadow .45s ease';
+  term.style.transform = 'scale(1.02) translateY(-6px)';
+  // append final message
+  lines.innerHTML += '\n\n' + '<span class="muted">[session] opening secure interface...</span>';
+  greeting.textContent = 'Console active.';
+  subtitle.textContent = 'Complete the task. Leave no trace.';
+  // simulate new console lines
+  setTimeout(()=> {
+    lines.innerHTML += '\n' + '<span class="muted">[shell] ready at » /home/operator</span>';
+    // scroll into view
+    lines.parentElement.scrollTop = lines.parentElement.scrollHeight;
+  },700);
+}
+
+/* about modal (simple) */
+aboutBtn.addEventListener('click', ()=>{
+  alert('AXIOMTECH — Secure Web Interfaces\nDesign • Build • Private Access\nContact: techaxiom0@gmail.com');
+});
+
+/* trigger boot on load */
+window.addEventListener('load', ()=> {
+  bootSequence();
+  // allow ENTER key to open console
+  window.addEventListener('keydown', (e)=>{
+    if(e.key === 'Enter') openConsole();
+  });
+  enterBtn.addEventListener('click', openConsole);
+});
+</script>
 </body>
 </html>
